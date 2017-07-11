@@ -11,7 +11,52 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170711003003) do
+ActiveRecord::Schema.define(version: 20170711010729) do
+
+  create_table "countries", force: :cascade do |t|
+    t.string   "name"
+    t.string   "language"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "universities", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "country_id"
+    t.string   "option"
+    t.string   "private_or_public"
+    t.string   "name"
+    t.text     "description"
+    t.string   "fundation"
+    t.string   "rector"
+    t.string   "email"
+    t.string   "facebook"
+    t.string   "twitter"
+    t.string   "linkedin"
+    t.string   "website"
+    t.string   "link_admission"
+    t.string   "address"
+    t.float    "longitude"
+    t.float    "latitude"
+    t.string   "logo"
+    t.string   "many_proffesors"
+    t.string   "many_students"
+    t.boolean  "is_wifi"
+    t.boolean  "is_cafe"
+    t.boolean  "is_safe"
+    t.boolean  "is_libray"
+    t.boolean  "is_job_help"
+    t.string   "is_student_exchange"
+    t.boolean  "is_spiritual"
+    t.string   "sports"
+    t.string   "cutural"
+    t.string   "languages"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
+
+  add_index "universities", ["country_id"], name: "index_universities_on_country_id"
+  add_index "universities", ["user_id"], name: "index_universities_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

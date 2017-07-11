@@ -1,0 +1,65 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  country_id: 
+  option: MyString
+  private_or_public: MyString
+  name: MyString
+  description: MyText
+  fundation: MyString
+  rector: MyString
+  email: MyString
+  facebook: MyString
+  twitter: MyString
+  linkedin: MyString
+  website: MyString
+  link_admission: MyString
+  address: MyString
+  longitude: 1.5
+  latitude: 1.5
+  logo: MyString
+  many_proffesors: MyString
+  many_students: MyString
+  is_wifi: false
+  is_cafe: false
+  is_safe: false
+  is_libray: false
+  is_job_help: false
+  is_student_exchange: MyString
+  is_spiritual: false
+  sports: MyString
+  cutural: MyString
+  languages: MyString
+
+two:
+  user_id: 
+  country_id: 
+  option: MyString
+  private_or_public: MyString
+  name: MyString
+  description: MyText
+  fundation: MyString
+  rector: MyString
+  email: MyString
+  facebook: MyString
+  twitter: MyString
+  linkedin: MyString
+  website: MyString
+  link_admission: MyString
+  address: MyString
+  longitude: 1.5
+  latitude: 1.5
+  logo: MyString
+  many_proffesors: MyString
+  many_students: MyString
+  is_wifi: false
+  is_cafe: false
+  is_safe: false
+  is_libray: false
+  is_job_help: false
+  is_student_exchange: MyString
+  is_spiritual: false
+  sports: MyString
+  cutural: MyString
+  languages: MyString
