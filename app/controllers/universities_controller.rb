@@ -12,6 +12,7 @@ class UniversitiesController < ApplicationController
   # GET /universities/1
   # GET /universities/1.json
   def show
+    @unive_score = @university.unive_scores.new
   end
 
   # GET /universities/new
