@@ -1,0 +1,2 @@
+module AcademicScoresHelper
+end

@@ -150,6 +150,8 @@
   <%= @university.languages %>
 </p>
 
+<!--  -->
+<!--  -->
 
 <%= form_for [@country,@university, @unive_score] do |f| %>
   <% if @unive_score.errors.any? %>
@@ -170,11 +172,263 @@
   <div class="actions">
     <%= f.submit %>
   </div>
-
-
 <% end %>
 
 <h1>Score: <%= @university.average_score %></h1>
+
+<!--  -->
+
+<%= form_for [@country,@university, @academic_score] do |f| %>
+  <% if @academic_score.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@academic_score.errors.count, "error") %> prohibited this academic_score from being saved:</h2>
+
+      <ul>
+      <% @academic_score.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :academic_score %><br>
+    <%= f.number_field :academic_score %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<h1>Score: <%= @university.average_academic_score %></h1>
+
+
+
+<!--  -->
+
+<%= form_for [@country,@university, @party_score] do |f| %>
+  <% if @academic_score.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@party_score.errors.count, "error") %> prohibited this party_score from being saved:</h2>
+
+      <ul>
+      <% @party_score.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :party_score %><br>
+    <%= f.number_field :party_score %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<h1>Score: <%= @university.average_party_score %></h1>
+
+<!--  -->
+
+
+<%= form_for [@country,@university, @satisfaction_score] do |f| %>
+  <% if @satisfaction_score.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@satisfaction_score.errors.count, "error") %> prohibited this satisfaction_score from being saved:</h2>
+
+      <ul>
+      <% @satisfaction_score.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :satisfaction_score %><br>
+    <%= f.number_field :satisfaction_score %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<h1>Score: <%= @university.average_satisfaction_score %></h1>
+
+<!--  -->
+
+<%= form_for [@country,@university, @infraestructure_score] do |f| %>
+  <% if @infraestructure_score.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@infraestructure_score.errors.count, "error") %> prohibited this infraestructure_score from being saved:</h2>
+
+      <ul>
+      <% @infraestructure_score.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :infraestructure_score %><br>
+    <%= f.number_field :infraestructure_score %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<h1>Score: <%= @university.average_infraestructure_score %></h1>
+
+<!--  -->
+
+<%= form_for [@country,@university, @alumni_score] do |f| %>
+  <% if @alumni_score.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@alumni_score.errors.count, "error") %> prohibited this alumni_score from being saved:</h2>
+
+      <ul>
+      <% @alumni_score.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :alumni_score %><br>
+    <%= f.number_field :alumni_score %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<h1>alumni_score: <%= @university.average_alumni_score %></h1>
+
+<!--  -->
+
+<%= form_for [@country,@university, @admission_score] do |f| %>
+  <% if @admission_score.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@admission_score.errors.count, "error") %> prohibited this admission_score from being saved:</h2>
+
+      <ul>
+      <% @admission_score.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :admission_score %><br>
+    <%= f.number_field :admission_score %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<h1>admission_score: <%= @university.average_admission_score %></h1>
+
+<!--  -->
+
+<%= form_for [@country,@university, @graduation_score] do |f| %>
+  <% if @graduation_score.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@graduation_score.errors.count, "error") %> prohibited this graduation_score from being saved:</h2>
+
+      <ul>
+      <% @graduation_score.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :graduation_score %><br>
+    <%= f.number_field :graduation_score %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<h1>graduation_score: <%= @university.average_graduation_score %></h1>
+
+<!--  -->
+
+<%= form_for [@country,@university, @professor_score] do |f| %>
+  <% if @professor_score.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@professor_score.errors.count, "error") %> prohibited this professor_score from being saved:</h2>
+
+      <ul>
+      <% @professor_score.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :professor_score %><br>
+    <%= f.number_field :professor_score %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<h1>professor_score: <%= @university.average_professor_score %></h1>
+
+<!--  -->
+
+<%= form_for [@country,@university, @investment_score] do |f| %>
+  <% if @investment_score.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@investment_score.errors.count, "error") %> prohibited this investment_score from being saved:</h2>
+
+      <ul>
+      <% @investment_score.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :investment_score %><br>
+    <%= f.number_field :investment_score %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<h1>investment_score: <%= @university.average_investment_score %></h1>
+
+<!--  -->
+
+
+<%= form_for [@country,@university, @finantial_score] do |f| %>
+  <% if @finantial_score.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@finantial_score.errors.count, "error") %> prohibited this finantial_score from being saved:</h2>
+
+      <ul>
+      <% @finantial_score.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :Finantial_score %><br>
+    <%= f.number_field :Finantial_score %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<h1>finantial_score: <%= @university.average_finantial_score %></h1>
 
 
 <%= link_to 'Edit', edit_country_university_path(@country, @university) %> |

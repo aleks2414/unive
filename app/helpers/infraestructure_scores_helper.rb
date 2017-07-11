@@ -1,0 +1,2 @@
+module InfraestructureScoresHelper
+end

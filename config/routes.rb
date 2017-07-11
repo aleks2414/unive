@@ -1,9 +1,21 @@
 Rails.application.routes.draw do
 
   
+  get 'alumni/alumni'
+
   resources :countries do
     resources :universities do
       resources :unive_scores
+      resources :academic_scores
+      resources :party_scores
+      resources :satisfaction_scores
+      resources :infraestructure_scores
+      resources :alumni_scores
+      resources :admission_scores
+      resources :graduation_scores
+      resources :professor_scores
+      resources :investment_scores
+      resources :finantial_scores
     end
   end
 

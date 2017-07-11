@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  alumni_score: 1.5
+  university_id: 
+  country_id: 
+  user_id: 
+
+two:
+  alumni_score: 1.5
+  university_id: 
+  country_id: 
+  user_id: 

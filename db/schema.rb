@@ -11,10 +11,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170711031254) do
+ActiveRecord::Schema.define(version: 20170711202634) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "academic_scores", force: :cascade do |t|
+    t.float    "academic_score", default: 3.0
+    t.integer  "university_id"
+    t.integer  "country_id"
+    t.integer  "user_id"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
+
+  add_index "academic_scores", ["country_id"], name: "index_academic_scores_on_country_id", using: :btree
+  add_index "academic_scores", ["university_id"], name: "index_academic_scores_on_university_id", using: :btree
+  add_index "academic_scores", ["user_id"], name: "index_academic_scores_on_user_id", using: :btree
+
+  create_table "admission_scores", force: :cascade do |t|
+    t.float    "admission_score", default: 3.0
+    t.integer  "university_id"
+    t.integer  "country_id"
+    t.integer  "user_id"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+  end
+
+  add_index "admission_scores", ["country_id"], name: "index_admission_scores_on_country_id", using: :btree
+  add_index "admission_scores", ["university_id"], name: "index_admission_scores_on_university_id", using: :btree
+  add_index "admission_scores", ["user_id"], name: "index_admission_scores_on_user_id", using: :btree
+
+  create_table "alumni_scores", force: :cascade do |t|
+    t.float    "alumni_score",  default: 3.0
+    t.integer  "university_id"
+    t.integer  "country_id"
+    t.integer  "user_id"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
+  add_index "alumni_scores", ["country_id"], name: "index_alumni_scores_on_country_id", using: :btree
+  add_index "alumni_scores", ["university_id"], name: "index_alumni_scores_on_university_id", using: :btree
+  add_index "alumni_scores", ["user_id"], name: "index_alumni_scores_on_user_id", using: :btree
 
   create_table "countries", force: :cascade do |t|
     t.string   "name"
@@ -22,6 +61,97 @@ ActiveRecord::Schema.define(version: 20170711031254) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "finantial_scores", force: :cascade do |t|
+    t.float    "Finantial_score", default: 3.0
+    t.integer  "university_id"
+    t.integer  "country_id"
+    t.integer  "user_id"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+  end
+
+  add_index "finantial_scores", ["country_id"], name: "index_finantial_scores_on_country_id", using: :btree
+  add_index "finantial_scores", ["university_id"], name: "index_finantial_scores_on_university_id", using: :btree
+  add_index "finantial_scores", ["user_id"], name: "index_finantial_scores_on_user_id", using: :btree
+
+  create_table "graduation_scores", force: :cascade do |t|
+    t.float    "graduation_score", default: 3.0
+    t.integer  "university_id"
+    t.integer  "country_id"
+    t.integer  "user_id"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+  end
+
+  add_index "graduation_scores", ["country_id"], name: "index_graduation_scores_on_country_id", using: :btree
+  add_index "graduation_scores", ["university_id"], name: "index_graduation_scores_on_university_id", using: :btree
+  add_index "graduation_scores", ["user_id"], name: "index_graduation_scores_on_user_id", using: :btree
+
+  create_table "infraestructure_scores", force: :cascade do |t|
+    t.float    "infraestructure_score", default: 3.0
+    t.integer  "university_id"
+    t.integer  "country_id"
+    t.integer  "user_id"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+  end
+
+  add_index "infraestructure_scores", ["country_id"], name: "index_infraestructure_scores_on_country_id", using: :btree
+  add_index "infraestructure_scores", ["university_id"], name: "index_infraestructure_scores_on_university_id", using: :btree
+  add_index "infraestructure_scores", ["user_id"], name: "index_infraestructure_scores_on_user_id", using: :btree
+
+  create_table "investment_scores", force: :cascade do |t|
+    t.float    "investment_score", default: 3.0
+    t.integer  "university_id"
+    t.integer  "country_id"
+    t.integer  "user_id"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+  end
+
+  add_index "investment_scores", ["country_id"], name: "index_investment_scores_on_country_id", using: :btree
+  add_index "investment_scores", ["university_id"], name: "index_investment_scores_on_university_id", using: :btree
+  add_index "investment_scores", ["user_id"], name: "index_investment_scores_on_user_id", using: :btree
+
+  create_table "party_scores", force: :cascade do |t|
+    t.float    "party_score",   default: 3.0
+    t.integer  "university_id"
+    t.integer  "country_id"
+    t.integer  "user_id"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
+  add_index "party_scores", ["country_id"], name: "index_party_scores_on_country_id", using: :btree
+  add_index "party_scores", ["university_id"], name: "index_party_scores_on_university_id", using: :btree
+  add_index "party_scores", ["user_id"], name: "index_party_scores_on_user_id", using: :btree
+
+  create_table "professor_scores", force: :cascade do |t|
+    t.float    "professor_score", default: 3.0
+    t.integer  "university_id"
+    t.integer  "country_id"
+    t.integer  "user_id"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+  end
+
+  add_index "professor_scores", ["country_id"], name: "index_professor_scores_on_country_id", using: :btree
+  add_index "professor_scores", ["university_id"], name: "index_professor_scores_on_university_id", using: :btree
+  add_index "professor_scores", ["user_id"], name: "index_professor_scores_on_user_id", using: :btree
+
+  create_table "satisfaction_scores", force: :cascade do |t|
+    t.float    "satisfaction_score", default: 3.0
+    t.integer  "university_id"
+    t.integer  "country_id"
+    t.integer  "user_id"
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+  end
+
+  add_index "satisfaction_scores", ["country_id"], name: "index_satisfaction_scores_on_country_id", using: :btree
+  add_index "satisfaction_scores", ["university_id"], name: "index_satisfaction_scores_on_university_id", using: :btree
+  add_index "satisfaction_scores", ["user_id"], name: "index_satisfaction_scores_on_user_id", using: :btree
 
   create_table "unive_scores", force: :cascade do |t|
     t.float    "unive_score",   default: 3.0
@@ -92,6 +222,36 @@ ActiveRecord::Schema.define(version: 20170711031254) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "academic_scores", "countries"
+  add_foreign_key "academic_scores", "universities"
+  add_foreign_key "academic_scores", "users"
+  add_foreign_key "admission_scores", "countries"
+  add_foreign_key "admission_scores", "universities"
+  add_foreign_key "admission_scores", "users"
+  add_foreign_key "alumni_scores", "countries"
+  add_foreign_key "alumni_scores", "universities"
+  add_foreign_key "alumni_scores", "users"
+  add_foreign_key "finantial_scores", "countries"
+  add_foreign_key "finantial_scores", "universities"
+  add_foreign_key "finantial_scores", "users"
+  add_foreign_key "graduation_scores", "countries"
+  add_foreign_key "graduation_scores", "universities"
+  add_foreign_key "graduation_scores", "users"
+  add_foreign_key "infraestructure_scores", "countries"
+  add_foreign_key "infraestructure_scores", "universities"
+  add_foreign_key "infraestructure_scores", "users"
+  add_foreign_key "investment_scores", "countries"
+  add_foreign_key "investment_scores", "universities"
+  add_foreign_key "investment_scores", "users"
+  add_foreign_key "party_scores", "countries"
+  add_foreign_key "party_scores", "universities"
+  add_foreign_key "party_scores", "users"
+  add_foreign_key "professor_scores", "countries"
+  add_foreign_key "professor_scores", "universities"
+  add_foreign_key "professor_scores", "users"
+  add_foreign_key "satisfaction_scores", "countries"
+  add_foreign_key "satisfaction_scores", "universities"
+  add_foreign_key "satisfaction_scores", "users"
   add_foreign_key "unive_scores", "countries"
   add_foreign_key "unive_scores", "universities"
   add_foreign_key "unive_scores", "users"
