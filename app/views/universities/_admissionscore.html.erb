@@ -1,0 +1,24 @@
+<%= form_for [@country,@university, @admission_score] do |f| %>
+  <% if @admission_score.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@admission_score.errors.count, "error") %> prohibited this admission_score from being saved:</h2>
+
+      <ul>
+      <% @admission_score.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :admission_score %><br>
+    <%= f.number_field :admission_score %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<h1>admission_score: <%= @university.average_admission_score %></h1>
+
+<!--  -->

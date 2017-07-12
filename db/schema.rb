@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170711202634) do
+ActiveRecord::Schema.define(version: 20170712011743) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,32 @@ ActiveRecord::Schema.define(version: 20170711202634) do
   add_index "alumni_scores", ["country_id"], name: "index_alumni_scores_on_country_id", using: :btree
   add_index "alumni_scores", ["university_id"], name: "index_alumni_scores_on_university_id", using: :btree
   add_index "alumni_scores", ["user_id"], name: "index_alumni_scores_on_user_id", using: :btree
+
+  create_table "careers", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "university_id"
+    t.integer  "country_id"
+    t.string   "name"
+    t.string   "area"
+    t.text     "description"
+    t.text     "for_who"
+    t.string   "duration"
+    t.string   "modality"
+    t.string   "shift"
+    t.string   "email"
+    t.string   "website"
+    t.string   "facebook"
+    t.string   "twitter"
+    t.string   "linkedin"
+    t.string   "blog"
+    t.string   "aprox_cost"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "careers", ["country_id"], name: "index_careers_on_country_id", using: :btree
+  add_index "careers", ["university_id"], name: "index_careers_on_university_id", using: :btree
+  add_index "careers", ["user_id"], name: "index_careers_on_user_id", using: :btree
 
   create_table "countries", force: :cascade do |t|
     t.string   "name"
@@ -231,6 +257,9 @@ ActiveRecord::Schema.define(version: 20170711202634) do
   add_foreign_key "alumni_scores", "countries"
   add_foreign_key "alumni_scores", "universities"
   add_foreign_key "alumni_scores", "users"
+  add_foreign_key "careers", "countries"
+  add_foreign_key "careers", "universities"
+  add_foreign_key "careers", "users"
   add_foreign_key "finantial_scores", "countries"
   add_foreign_key "finantial_scores", "universities"
   add_foreign_key "finantial_scores", "users"

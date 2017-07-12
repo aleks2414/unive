@@ -1,0 +1,89 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @career.user %>
+</p>
+
+<p>
+  <strong>University:</strong>
+  <%= @career.university %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @career.country %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @career.name %>
+</p>
+
+<p>
+  <strong>Area:</strong>
+  <%= @career.area %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @career.description %>
+</p>
+
+<p>
+  <strong>For who:</strong>
+  <%= @career.for_who %>
+</p>
+
+<p>
+  <strong>Duration:</strong>
+  <%= @career.duration %>
+</p>
+
+<p>
+  <strong>Modality:</strong>
+  <%= @career.modality %>
+</p>
+
+<p>
+  <strong>Shift:</strong>
+  <%= @career.shift %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @career.email %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= @career.website %>
+</p>
+
+<p>
+  <strong>Facebook:</strong>
+  <%= @career.facebook %>
+</p>
+
+<p>
+  <strong>Twitter:</strong>
+  <%= @career.twitter %>
+</p>
+
+<p>
+  <strong>Linkedin:</strong>
+  <%= @career.linkedin %>
+</p>
+
+<p>
+  <strong>Blog:</strong>
+  <%= @career.blog %>
+</p>
+
+<p>
+  <strong>Aprox cost:</strong>
+  <%= @career.aprox_cost %>
+</p>
+
+<%= link_to 'Edit', edit_country_university_career_path(@country, @university, @career) %> |
+<%= link_to 'Back', country_university_path(@country, @university) %>

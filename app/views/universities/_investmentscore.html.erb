@@ -1,0 +1,24 @@
+<%= form_for [@country,@university, @investment_score] do |f| %>
+  <% if @investment_score.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@investment_score.errors.count, "error") %> prohibited this investment_score from being saved:</h2>
+
+      <ul>
+      <% @investment_score.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :investment_score %><br>
+    <%= f.number_field :investment_score %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<h1>investment_score: <%= @university.average_investment_score %></h1>
+
+<!--  -->

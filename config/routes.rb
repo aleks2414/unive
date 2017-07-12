@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   
+  resources :careers
   get 'alumni/alumni'
 
   resources :countries do
@@ -16,6 +17,7 @@ Rails.application.routes.draw do
       resources :professor_scores
       resources :investment_scores
       resources :finantial_scores
+      resources :careers
     end
   end
 

@@ -1,0 +1,26 @@
+<%= form_for [@country,@university, @academic_score] do |f| %>
+  <% if @academic_score.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@academic_score.errors.count, "error") %> prohibited this academic_score from being saved:</h2>
+
+      <ul>
+      <% @academic_score.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :academic_score %><br>
+    <%= f.number_field :academic_score %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<h1>Score: <%= @university.average_academic_score %></h1>
+
+
+
+<!--  -->

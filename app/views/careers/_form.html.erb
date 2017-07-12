@@ -1,0 +1,73 @@
+<%= form_for [@country, @university, @career] do |f| %>
+  <% if @career.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@career.errors.count, "error") %> prohibited this career from being saved:</h2>
+
+      <ul>
+      <% @career.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :area %><br>
+    <%= f.text_field :area %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :for_who %><br>
+    <%= f.text_area :for_who %>
+  </div>
+  <div class="field">
+    <%= f.label :duration %><br>
+    <%= f.text_field :duration %>
+  </div>
+  <div class="field">
+    <%= f.label :modality %><br>
+    <%= f.text_field :modality %>
+  </div>
+  <div class="field">
+    <%= f.label :shift %><br>
+    <%= f.text_field :shift %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :website %><br>
+    <%= f.text_field :website %>
+  </div>
+  <div class="field">
+    <%= f.label :facebook %><br>
+    <%= f.text_field :facebook %>
+  </div>
+  <div class="field">
+    <%= f.label :twitter %><br>
+    <%= f.text_field :twitter %>
+  </div>
+  <div class="field">
+    <%= f.label :linkedin %><br>
+    <%= f.text_field :linkedin %>
+  </div>
+  <div class="field">
+    <%= f.label :blog %><br>
+    <%= f.text_field :blog %>
+  </div>
+  <div class="field">
+    <%= f.label :aprox_cost %><br>
+    <%= f.text_field :aprox_cost %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

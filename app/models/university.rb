@@ -12,6 +12,7 @@ has_many :graduation_scores
 has_many :professor_scores
 has_many :investment_scores
 has_many :finantial_scores
+has_many :careers
 
   def average_score
     unive_scores.count == 0 ? 0 : unive_scores.average(:unive_score).round(2)
