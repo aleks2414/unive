@@ -1,0 +1,2 @@
+module CurrentJobsHelper
+end

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  career_id: 
+  university_id: 
+  user_id: 
+  name: MyString
+  position: 1
+  link: MyString
+
+two:
+  career_id: 
+  university_id: 
+  user_id: 
+  name: MyString
+  position: 1
+  link: MyString

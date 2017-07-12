@@ -1,0 +1,28 @@
+<%= form_for([@country,@university,@career, @career.current_jobs.new]) do |f| %>
+
+
+
+<div id="user_stars"></div>
+<br>
+  <div class="form-group">
+    <%= f.text_field :business_name, rows: 3, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.text_field :job, rows: 3, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.text_field :start_date, rows: 3, class: "form-control" %>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit "Create Current Job", class: "button button_red" %>
+  </div>
+
+  <hr>
+
+<% end %>
+
+<!--  -->

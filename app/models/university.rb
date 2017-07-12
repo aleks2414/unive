@@ -14,6 +14,12 @@ has_many :investment_scores
 has_many :finantial_scores
 has_many :careers
 
+has_many :reviews
+has_many :ex_students
+has_many :accreditations
+has_many :rankings
+has_many :current_jobs
+
   def average_score
     unive_scores.count == 0 ? 0 : unive_scores.average(:unive_score).round(2)
   end

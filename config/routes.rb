@@ -17,7 +17,13 @@ Rails.application.routes.draw do
       resources :professor_scores
       resources :investment_scores
       resources :finantial_scores
-      resources :careers
+      resources :careers do
+        resources :reviews
+        resources :ex_students
+        resources :accreditations
+        resources :rankings
+        resources :current_jobs
+      end
     end
   end
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170712011743) do
+ActiveRecord::Schema.define(version: 20170712160820) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,21 @@ ActiveRecord::Schema.define(version: 20170712011743) do
   add_index "academic_scores", ["country_id"], name: "index_academic_scores_on_country_id", using: :btree
   add_index "academic_scores", ["university_id"], name: "index_academic_scores_on_university_id", using: :btree
   add_index "academic_scores", ["user_id"], name: "index_academic_scores_on_user_id", using: :btree
+
+  create_table "accreditations", force: :cascade do |t|
+    t.integer  "career_id"
+    t.integer  "university_id"
+    t.integer  "user_id"
+    t.string   "name"
+    t.string   "link"
+    t.string   "year"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "accreditations", ["career_id"], name: "index_accreditations_on_career_id", using: :btree
+  add_index "accreditations", ["university_id"], name: "index_accreditations_on_university_id", using: :btree
+  add_index "accreditations", ["user_id"], name: "index_accreditations_on_user_id", using: :btree
 
   create_table "admission_scores", force: :cascade do |t|
     t.float    "admission_score", default: 3.0
@@ -87,6 +102,35 @@ ActiveRecord::Schema.define(version: 20170712011743) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "current_jobs", force: :cascade do |t|
+    t.integer  "career_id"
+    t.integer  "university_id"
+    t.integer  "user_id"
+    t.string   "business_name"
+    t.string   "job"
+    t.date     "start_date"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "current_jobs", ["career_id"], name: "index_current_jobs_on_career_id", using: :btree
+  add_index "current_jobs", ["university_id"], name: "index_current_jobs_on_university_id", using: :btree
+  add_index "current_jobs", ["user_id"], name: "index_current_jobs_on_user_id", using: :btree
+
+  create_table "ex_students", force: :cascade do |t|
+    t.integer  "career_id"
+    t.integer  "university_id"
+    t.integer  "user_id"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "ex_students", ["career_id"], name: "index_ex_students_on_career_id", using: :btree
+  add_index "ex_students", ["university_id"], name: "index_ex_students_on_university_id", using: :btree
+  add_index "ex_students", ["user_id"], name: "index_ex_students_on_user_id", using: :btree
 
   create_table "finantial_scores", force: :cascade do |t|
     t.float    "Finantial_score", default: 3.0
@@ -165,6 +209,35 @@ ActiveRecord::Schema.define(version: 20170712011743) do
   add_index "professor_scores", ["country_id"], name: "index_professor_scores_on_country_id", using: :btree
   add_index "professor_scores", ["university_id"], name: "index_professor_scores_on_university_id", using: :btree
   add_index "professor_scores", ["user_id"], name: "index_professor_scores_on_user_id", using: :btree
+
+  create_table "rankings", force: :cascade do |t|
+    t.integer  "career_id"
+    t.integer  "university_id"
+    t.integer  "user_id"
+    t.string   "name"
+    t.integer  "position"
+    t.string   "link"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "rankings", ["career_id"], name: "index_rankings_on_career_id", using: :btree
+  add_index "rankings", ["university_id"], name: "index_rankings_on_university_id", using: :btree
+  add_index "rankings", ["user_id"], name: "index_rankings_on_user_id", using: :btree
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer  "career_id"
+    t.integer  "university_id"
+    t.integer  "user_id"
+    t.integer  "star"
+    t.text     "comment"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "reviews", ["career_id"], name: "index_reviews_on_career_id", using: :btree
+  add_index "reviews", ["university_id"], name: "index_reviews_on_university_id", using: :btree
+  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id", using: :btree
 
   create_table "satisfaction_scores", force: :cascade do |t|
     t.float    "satisfaction_score", default: 3.0
@@ -251,6 +324,9 @@ ActiveRecord::Schema.define(version: 20170712011743) do
   add_foreign_key "academic_scores", "countries"
   add_foreign_key "academic_scores", "universities"
   add_foreign_key "academic_scores", "users"
+  add_foreign_key "accreditations", "careers"
+  add_foreign_key "accreditations", "universities"
+  add_foreign_key "accreditations", "users"
   add_foreign_key "admission_scores", "countries"
   add_foreign_key "admission_scores", "universities"
   add_foreign_key "admission_scores", "users"
@@ -260,6 +336,12 @@ ActiveRecord::Schema.define(version: 20170712011743) do
   add_foreign_key "careers", "countries"
   add_foreign_key "careers", "universities"
   add_foreign_key "careers", "users"
+  add_foreign_key "current_jobs", "careers"
+  add_foreign_key "current_jobs", "universities"
+  add_foreign_key "current_jobs", "users"
+  add_foreign_key "ex_students", "careers"
+  add_foreign_key "ex_students", "universities"
+  add_foreign_key "ex_students", "users"
   add_foreign_key "finantial_scores", "countries"
   add_foreign_key "finantial_scores", "universities"
   add_foreign_key "finantial_scores", "users"
@@ -278,6 +360,12 @@ ActiveRecord::Schema.define(version: 20170712011743) do
   add_foreign_key "professor_scores", "countries"
   add_foreign_key "professor_scores", "universities"
   add_foreign_key "professor_scores", "users"
+  add_foreign_key "rankings", "careers"
+  add_foreign_key "rankings", "universities"
+  add_foreign_key "rankings", "users"
+  add_foreign_key "reviews", "careers"
+  add_foreign_key "reviews", "universities"
+  add_foreign_key "reviews", "users"
   add_foreign_key "satisfaction_scores", "countries"
   add_foreign_key "satisfaction_scores", "universities"
   add_foreign_key "satisfaction_scores", "users"

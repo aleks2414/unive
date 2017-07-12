@@ -85,5 +85,18 @@
   <%= @career.aprox_cost %>
 </p>
 
+
+<%= render 'reviews' %>
+
+<%= render 'accreditations' %>
+
+<%= render 'rankings' %>
+
+<%= render 'current_jobs' %>
+
+<%= render 'alumni' %>
+
+
+
 <%= link_to 'Edit', edit_country_university_career_path(@country, @university, @career) %> |
 <%= link_to 'Back', country_university_path(@country, @university) %>

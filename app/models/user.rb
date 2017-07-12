@@ -16,4 +16,10 @@ has_many :professor_scores
 has_many :investment_scores
 has_many :finantial_scores
 has_many :careers
+
+has_many :reviews
+has_many :ex_students
+has_many :accreditations
+has_many :rankings
+has_many :current_jobs
 end

@@ -1,0 +1,24 @@
+<%= form_for([@country,@university,@career, @career.ex_students.new]) do |f| %>
+
+
+
+<div id="user_stars"></div>
+<br>
+  <div class="form-group">
+    <%= f.date_field :start_date, rows: 3, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.date_field :end_date, rows: 3, class: "form-control" %>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit "Create Ex Student", class: "button button_red" %>
+  </div>
+
+  <hr>
+
+<% end %>
+
+<!--  -->

@@ -1,0 +1,2 @@
+class AccreditationsController < ApplicationController
+end
