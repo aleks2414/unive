@@ -23,6 +23,8 @@ class UniversitiesController < ApplicationController
     @professor_score = @university.professor_scores.new
     @investment_score = @university.investment_scores.new
     @finantial_score = @university.finantial_scores.new
+
+    @careers = @university.careers
   end
 
   # GET /universities/new
