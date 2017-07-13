@@ -64,4 +64,7 @@ has_many :current_jobs
     finantial_scores.count == 0 ? 0 : finantial_scores.average(:Finantial_score).round(2)
   end
 
+extend FriendlyId
+  friendly_id :name, use: :slugged
+
 end

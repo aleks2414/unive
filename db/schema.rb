@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170712160820) do
+ActiveRecord::Schema.define(version: 20170713005935) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -90,9 +90,11 @@ ActiveRecord::Schema.define(version: 20170712160820) do
     t.string   "aprox_cost"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.string   "slug"
   end
 
   add_index "careers", ["country_id"], name: "index_careers_on_country_id", using: :btree
+  add_index "careers", ["slug"], name: "index_careers_on_slug", unique: true, using: :btree
   add_index "careers", ["university_id"], name: "index_careers_on_university_id", using: :btree
   add_index "careers", ["user_id"], name: "index_careers_on_user_id", using: :btree
 
@@ -101,7 +103,10 @@ ActiveRecord::Schema.define(version: 20170712160820) do
     t.string   "language"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "slug"
   end
+
+  add_index "countries", ["slug"], name: "index_countries_on_slug", unique: true, using: :btree
 
   create_table "current_jobs", force: :cascade do |t|
     t.integer  "career_id"
@@ -144,6 +149,19 @@ ActiveRecord::Schema.define(version: 20170712160820) do
   add_index "finantial_scores", ["country_id"], name: "index_finantial_scores_on_country_id", using: :btree
   add_index "finantial_scores", ["university_id"], name: "index_finantial_scores_on_university_id", using: :btree
   add_index "finantial_scores", ["user_id"], name: "index_finantial_scores_on_user_id", using: :btree
+
+  create_table "friendly_id_slugs", force: :cascade do |t|
+    t.string   "slug",                      null: false
+    t.integer  "sluggable_id",              null: false
+    t.string   "sluggable_type", limit: 50
+    t.string   "scope"
+    t.datetime "created_at"
+  end
+
+  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true, using: :btree
+  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
+  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
+  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
   create_table "graduation_scores", force: :cascade do |t|
     t.float    "graduation_score", default: 3.0
@@ -298,9 +316,11 @@ ActiveRecord::Schema.define(version: 20170712160820) do
     t.string   "languages"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
+    t.string   "slug"
   end
 
   add_index "universities", ["country_id"], name: "index_universities_on_country_id", using: :btree
+  add_index "universities", ["slug"], name: "index_universities_on_slug", unique: true, using: :btree
   add_index "universities", ["user_id"], name: "index_universities_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|

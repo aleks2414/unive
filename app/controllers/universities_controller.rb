@@ -81,11 +81,11 @@ class UniversitiesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_university
-      @university = University.find(params[:id])
+      @university = University.friendly.find(params[:id])
     end
 
     def set_country
-      @country = Country.find(params[:country_id])
+      @country = Country.friendly.find(params[:country_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
