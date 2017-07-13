@@ -60,10 +60,10 @@ class UniversitiesController < ApplicationController
     respond_to do |format|
       if @university.update(university_params)
         format.html { redirect_to @university, notice: 'University was successfully updated.' }
-        format.json { render :show, status: :ok, location: @university }
+        format.json { respond_with_bip(@university) }
       else
         format.html { render :edit }
-        format.json { render json: @university.errors, status: :unprocessable_entity }
+        format.json { respond_with_bip(@university) }
       end
     end
   end

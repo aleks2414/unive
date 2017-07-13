@@ -13,6 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+
 //= require jquery
 //= require bootstrap-sprockets
+//= require jquery.purr
+//= require best_in_place
+//= require_tree .
+

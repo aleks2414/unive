@@ -36,6 +36,7 @@ gem 'aws-sdk', '~> 2.3'
 gem "figaro"
 gem 'meta-tags'
 gem 'searchkick'
+gem 'best_in_place', github: 'bernat/best_in_place'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

@@ -22,7 +22,8 @@
 
 <p>
   <strong>Name:</strong>
-  <%= @university.name %>
+  
+  <%= best_in_place [@country, @university], :name, :place_holder => "Click me to add content!" %>
 </p>
 
 <p>

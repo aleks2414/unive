@@ -1,23 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>User:</strong>
-  <%= @career.user %>
-</p>
-
-<p>
-  <strong>University:</strong>
-  <%= @career.university %>
-</p>
-
-<p>
-  <strong>Country:</strong>
-  <%= @career.country %>
-</p>
-
-<p>
   <strong>Name:</strong>
-  <%= @career.name %>
+  <%= best_in_place [@country, @university, @career], :name, :place_holder => "Click me to add content!" %>
 </p>
 
 <p>
