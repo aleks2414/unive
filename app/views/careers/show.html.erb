@@ -2,7 +2,7 @@
 
 <p>
   <strong>Name:</strong>
-  <%= best_in_place [@country, @university, @career], :name, :place_holder => "Click me to add content!" %>
+  <%= best_in_place_if user_signed_in?, [@country, @university, @career], :name, :place_holder => "Click me to add content!" %>
 </p>
 
 <p>
