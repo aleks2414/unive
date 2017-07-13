@@ -4,6 +4,9 @@ before_action :set_infraestructure_scores, only: [:show, :edit, :update, :destro
   before_action :set_country
   before_action :authenticate_user!, only: [:new, :edit]
 
+def new
+  @infraestructure_score = @university.infraestructure_scores.new
+end
 
   # POST /universities
   # POST /universities.json
@@ -16,10 +19,10 @@ before_action :set_infraestructure_scores, only: [:show, :edit, :update, :destro
     respond_to do |format|
       if @infraestructure_score.save
         format.html { redirect_to country_university_path(@country, @university), notice: 'UniveScore was successfully created.' }
-        format.json { render :show, status: :created, location: @infraestructure_score }
+        format.js
       else
         format.html { render :new }
-        format.json { render json: @infraestructure_score.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -41,15 +44,15 @@ before_action :set_infraestructure_scores, only: [:show, :edit, :update, :destro
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_infraestructure_scores
-      @infraestructure_score = InfraestructureScore.find(params[:id])
+      @infraestructure_score = InfraestructureScore.friendly.find(params[:id])
     end
 
     def set_university
-      @university = University.find(params[:university_id])
+      @university = University.friendly.find(params[:university_id])
     end
 
     def set_country
-      @country = Country.find(params[:country_id])
+      @country = Country.friendly.find(params[:country_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -1,4 +1,17 @@
-<%= form_for [@country,@university, @professor_score] do |f| %>
+<!-- Trigger the modal with a button -->
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#ProfessormyModal">New Professor Score</button>
+<!--  -->
+<!-- Modal -->
+<div class="modal fade" id="ProfessormyModal" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Your Professor Score</h4>
+      </div>
+      <div class="modal-body">
+
+<%= form_for [@country,@university, @professor_score], remote: true, :html => {:id => 'professor_review_form'} do |f| %>
   <% if @professor_score.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@professor_score.errors.count, "error") %> prohibited this professor_score from being saved:</h2>
@@ -18,7 +31,12 @@
     <%= f.submit %>
   </div>
 <% end %>
+</div>
+    </div>
+  </div>
+</div>
 
-<h1>professor_score: <%= @university.average_professor_score %></h1>
+<h1>Professor Score: <span id="professor_reviews_count"><%= @university.average_professor_score %></span></h1>
+
 
 <!--  -->

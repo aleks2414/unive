@@ -1,4 +1,17 @@
-<%= form_for [@country,@university, @satisfaction_score] do |f| %>
+<!-- Trigger the modal with a button -->
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#SatisfactionmyModal">New Satisfaction Score</button>
+<!--  -->
+<!-- Modal -->
+<div class="modal fade" id="SatisfactionmyModal" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Your Satisfaction Score</h4>
+      </div>
+      <div class="modal-body">
+
+<%= form_for [@country,@university, @satisfaction_score], remote: true, :html => {:id => 'satisfaction_review_form'} do |f| %>
   <% if @satisfaction_score.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@satisfaction_score.errors.count, "error") %> prohibited this satisfaction_score from being saved:</h2>
@@ -18,7 +31,12 @@
     <%= f.submit %>
   </div>
 <% end %>
+</div>
+    </div>
+  </div>
+</div>
 
-<h1>Score: <%= @university.average_satisfaction_score %></h1>
+<h1>Satisfaction Score: <span id="satisfaction_reviews_count"><%= @university.average_satisfaction_score %></span></h1>
+
 
 <!--  -->

@@ -5,6 +5,9 @@ before_action :set_finantial_scores, only: [:show, :edit, :update, :destroy]
   before_action :set_country
   before_action :authenticate_user!, only: [:new, :edit]
 
+def new
+  @finantial_score = @university.finantial_scores.new
+end
 
   # POST /universities
   # POST /universities.json
@@ -17,10 +20,10 @@ before_action :set_finantial_scores, only: [:show, :edit, :update, :destroy]
     respond_to do |format|
       if @finantial_score.save
         format.html { redirect_to country_university_path(@country, @university), notice: 'UniveScore was successfully created.' }
-        format.json { render :show, status: :created, location: @finantial_score }
+        format.js
       else
         format.html { render :new }
-        format.json { render json: @finantial_score.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -42,20 +45,20 @@ before_action :set_finantial_scores, only: [:show, :edit, :update, :destroy]
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_finantial_scores
-      @finantial_score = FinantialScore.find(params[:id])
+      @finantial_score = FinantialScore.friendly.find(params[:id])
     end
 
     def set_university
-      @university = University.find(params[:university_id])
+      @university = University.friendly.find(params[:university_id])
     end
 
     def set_country
-      @country = Country.find(params[:country_id])
+      @country = Country.friendly.find(params[:country_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def finantial_scores_params
-      params.require(:finantial_score).permit(:user_id, :country_id, :university_id, :finantial_score)
+      params.require(:finantial_score).permit(:user_id, :country_id, :university_id, :Finantial_score)
     end
 
 

@@ -1,27 +1,39 @@
+<!-- Trigger the modal with a button -->
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">New Unive Score</button>
 <!--  -->
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Your Unive Score</h4>
+      </div>
+      <div class="modal-body">
+        <%= form_for [@country,@university, @unive_score], remote:true, :html => {:id => 'review_form'} do |f| %>
+        <% if @unive_score.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@unive_score.errors.count, "error") %> prohibited this unive_score from being saved:</h2>
 
+          <ul>
+            <% @unive_score.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+        <% end %>
+        <div class="field">
+          <%= f.label :unive_score %><br>
+          <%= f.number_field :unive_score %>
+        </div>
+        <div class="actions">
+          <%= f.submit %>
+        </div>
+        <% end %>
 
-<%= form_for [@country,@university, @unive_score], remote:true, :html => {:id => 'review_form'} do |f| %>
-  <% if @unive_score.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@unive_score.errors.count, "error") %> prohibited this unive_score from being saved:</h2>
-
-      <ul>
-      <% @unive_score.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+      </div>
     </div>
-  <% end %>
-  <div class="field">
-    <%= f.label :unive_score %><br>
-    <%= f.number_field :unive_score %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>
 
-<h1>Unive Score:</h1><h1 id="reviews_count"><%= @university.average_score %></h1>
-
-<!--  -->
+<h1>Unive Score: <span id="reviews_count"><%= @university.average_score %></span></h1>

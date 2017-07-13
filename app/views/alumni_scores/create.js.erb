@@ -3,6 +3,6 @@
 // page[:review_form].reset
 // page.replace_html :notice, flash[:notice]
 // flash.discard
-$("#reviews_count").html("<%= pluralize(@university.average_score,'') %>");
-$("#review_form")[0].reset();
-$('#myModal').modal('hide');
+$("#alumni_reviews_count").html("<%= pluralize(@university.average_alumni_score,'') %>");
+$("#alumni_review_form")[0].reset();
+$('#AlumnimyModal').modal('hide');
