@@ -72,9 +72,9 @@
         <td><%= university.sports %></td>
         <td><%= university.cutural %></td>
         <td><%= university.languages %></td>
-        <td><%= link_to 'Show', country_university_path(@country, university) %></td>
-        <td><%= link_to 'Edit', edit_country_university_path(@country, university) %></td>
-        <td><%= link_to 'Destroy', country_university_path(@country, university), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', university_path( university) %></td>
+        <td><%= link_to 'Edit', edit_university_path( university) %></td>
+        <td><%= link_to 'Destroy', university_path( university), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -82,4 +82,4 @@
 
 <br>
 
-<%= link_to 'New University', new_country_university_path %>
+<%= link_to 'New University', new_university_path %>

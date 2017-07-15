@@ -1,7 +1,6 @@
 class GraduationScoresController < ApplicationController
 before_action :set_graduation_scores, only: [:show, :edit, :update, :destroy]
   before_action :set_university
-  before_action :set_country
   before_action :authenticate_user!, only: [:new, :edit]
 
 def new
@@ -12,13 +11,13 @@ end
   # POST /universities.json
   def create
     @graduation_score = GraduationScore.new(graduation_scores_params)
-    @graduation_score.country_id = @country.id
+
     @graduation_score.university_id = @university.id
     @graduation_score.user_id = current_user.id
 
     respond_to do |format|
       if @graduation_score.save
-        format.html { redirect_to country_university_path(@country, @university), notice: 'UniveScore was successfully created.' }
+        format.html { redirect_to university_path( @university), notice: 'UniveScore was successfully created.' }
         format.js
       else
         format.html { render :new }
@@ -51,13 +50,10 @@ end
       @university = University.friendly.find(params[:university_id])
     end
 
-    def set_country
-      @country = Country.friendly.find(params[:country_id])
-    end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def graduation_scores_params
-      params.require(:graduation_score).permit(:user_id, :country_id, :university_id, :graduation_score)
+      params.require(:graduation_score).permit(:user_id, :university_id, :graduation_score)
     end
 
 

@@ -3,7 +3,7 @@
 // page[:review_form].reset
 // page.replace_html :notice, flash[:notice]
 // flash.discard
-<% if @unive_score.errors.empty? %>
+<% if @admission_score.errors.empty? %>
 $('.alert').html("El producto ha sido creado con éxito").show();
 
 $("#admission_reviews_count").html("<%= pluralize(@university.average_admission_score,'') %>");
@@ -11,5 +11,5 @@ $("#admission_review_form")[0].reset();
 $('#AdmissionmyModal').modal('hide');
 <% else %>
 // show first error
-alert('<%= @unive_score.errors.full_messages[0] %>');
+alert('<%= @admission_score.errors.full_messages[0] %>');
 <% end %>

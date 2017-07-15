@@ -10,7 +10,7 @@
         <h4 class="modal-title">Your Unive Score</h4>
       </div>
       <div class="modal-body">
-        <%= form_for [@country,@university, @unive_score], remote:true, :html => {:id => 'review_form'} do |f| %>
+        <%= form_for [@university, @unive_score], remote:true, :html => {:id => 'review_form'} do |f| %>
         <% if @unive_score.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(@unive_score.errors.count, "error") %> prohibited this unive_score from being saved:</h2>

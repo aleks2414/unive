@@ -1,6 +1,5 @@
 class UniversitiesController < ApplicationController
   before_action :set_university, only: [:show, :edit, :update, :destroy]
-  before_action :set_country
   before_action :authenticate_user!, only: [:new, :edit]
 
   # GET /universities
@@ -29,7 +28,7 @@ class UniversitiesController < ApplicationController
 
   # GET /universities/new
   def new
-    @university = @country.universities.new
+    @university = University.new
   end
 
   # GET /universities/1/edit
@@ -40,12 +39,11 @@ class UniversitiesController < ApplicationController
   # POST /universities.json
   def create
     @university = University.new(university_params)
-    @university.country_id = @country.id
     @university.user_id = current_user.id
 
     respond_to do |format|
       if @university.save
-        format.html { redirect_to country_university_path(@country, @university), notice: 'University was successfully created.' }
+        format.html { redirect_to university_path(@university), notice: 'University was successfully created.' }
         format.json { render :show, status: :created, location: @university }
       else
         format.html { render :new }
@@ -84,9 +82,6 @@ class UniversitiesController < ApplicationController
       @university = University.friendly.find(params[:id])
     end
 
-    def set_country
-      @country = Country.friendly.find(params[:country_id])
-    end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def university_params

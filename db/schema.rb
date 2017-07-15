@@ -19,13 +19,11 @@ ActiveRecord::Schema.define(version: 20170713005935) do
   create_table "academic_scores", force: :cascade do |t|
     t.float    "academic_score", default: 3.0
     t.integer  "university_id"
-    t.integer  "country_id"
     t.integer  "user_id"
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
   end
 
-  add_index "academic_scores", ["country_id"], name: "index_academic_scores_on_country_id", using: :btree
   add_index "academic_scores", ["university_id"], name: "index_academic_scores_on_university_id", using: :btree
   add_index "academic_scores", ["user_id"], name: "index_academic_scores_on_user_id", using: :btree
 
@@ -47,33 +45,28 @@ ActiveRecord::Schema.define(version: 20170713005935) do
   create_table "admission_scores", force: :cascade do |t|
     t.float    "admission_score", default: 3.0
     t.integer  "university_id"
-    t.integer  "country_id"
     t.integer  "user_id"
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
   end
 
-  add_index "admission_scores", ["country_id"], name: "index_admission_scores_on_country_id", using: :btree
   add_index "admission_scores", ["university_id"], name: "index_admission_scores_on_university_id", using: :btree
   add_index "admission_scores", ["user_id"], name: "index_admission_scores_on_user_id", using: :btree
 
   create_table "alumni_scores", force: :cascade do |t|
     t.float    "alumni_score",  default: 3.0
     t.integer  "university_id"
-    t.integer  "country_id"
     t.integer  "user_id"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
   end
 
-  add_index "alumni_scores", ["country_id"], name: "index_alumni_scores_on_country_id", using: :btree
   add_index "alumni_scores", ["university_id"], name: "index_alumni_scores_on_university_id", using: :btree
   add_index "alumni_scores", ["user_id"], name: "index_alumni_scores_on_user_id", using: :btree
 
   create_table "careers", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "university_id"
-    t.integer  "country_id"
     t.string   "name"
     t.string   "area"
     t.text     "description"
@@ -93,7 +86,6 @@ ActiveRecord::Schema.define(version: 20170713005935) do
     t.string   "slug"
   end
 
-  add_index "careers", ["country_id"], name: "index_careers_on_country_id", using: :btree
   add_index "careers", ["slug"], name: "index_careers_on_slug", unique: true, using: :btree
   add_index "careers", ["university_id"], name: "index_careers_on_university_id", using: :btree
   add_index "careers", ["user_id"], name: "index_careers_on_user_id", using: :btree
@@ -103,10 +95,7 @@ ActiveRecord::Schema.define(version: 20170713005935) do
     t.string   "language"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "slug"
   end
-
-  add_index "countries", ["slug"], name: "index_countries_on_slug", unique: true, using: :btree
 
   create_table "current_jobs", force: :cascade do |t|
     t.integer  "career_id"
@@ -140,13 +129,11 @@ ActiveRecord::Schema.define(version: 20170713005935) do
   create_table "finantial_scores", force: :cascade do |t|
     t.float    "Finantial_score", default: 3.0
     t.integer  "university_id"
-    t.integer  "country_id"
     t.integer  "user_id"
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
   end
 
-  add_index "finantial_scores", ["country_id"], name: "index_finantial_scores_on_country_id", using: :btree
   add_index "finantial_scores", ["university_id"], name: "index_finantial_scores_on_university_id", using: :btree
   add_index "finantial_scores", ["user_id"], name: "index_finantial_scores_on_user_id", using: :btree
 
@@ -166,65 +153,55 @@ ActiveRecord::Schema.define(version: 20170713005935) do
   create_table "graduation_scores", force: :cascade do |t|
     t.float    "graduation_score", default: 3.0
     t.integer  "university_id"
-    t.integer  "country_id"
     t.integer  "user_id"
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
   end
 
-  add_index "graduation_scores", ["country_id"], name: "index_graduation_scores_on_country_id", using: :btree
   add_index "graduation_scores", ["university_id"], name: "index_graduation_scores_on_university_id", using: :btree
   add_index "graduation_scores", ["user_id"], name: "index_graduation_scores_on_user_id", using: :btree
 
   create_table "infraestructure_scores", force: :cascade do |t|
     t.float    "infraestructure_score", default: 3.0
     t.integer  "university_id"
-    t.integer  "country_id"
     t.integer  "user_id"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
   end
 
-  add_index "infraestructure_scores", ["country_id"], name: "index_infraestructure_scores_on_country_id", using: :btree
   add_index "infraestructure_scores", ["university_id"], name: "index_infraestructure_scores_on_university_id", using: :btree
   add_index "infraestructure_scores", ["user_id"], name: "index_infraestructure_scores_on_user_id", using: :btree
 
   create_table "investment_scores", force: :cascade do |t|
     t.float    "investment_score", default: 3.0
     t.integer  "university_id"
-    t.integer  "country_id"
     t.integer  "user_id"
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
   end
 
-  add_index "investment_scores", ["country_id"], name: "index_investment_scores_on_country_id", using: :btree
   add_index "investment_scores", ["university_id"], name: "index_investment_scores_on_university_id", using: :btree
   add_index "investment_scores", ["user_id"], name: "index_investment_scores_on_user_id", using: :btree
 
   create_table "party_scores", force: :cascade do |t|
     t.float    "party_score",   default: 3.0
     t.integer  "university_id"
-    t.integer  "country_id"
     t.integer  "user_id"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
   end
 
-  add_index "party_scores", ["country_id"], name: "index_party_scores_on_country_id", using: :btree
   add_index "party_scores", ["university_id"], name: "index_party_scores_on_university_id", using: :btree
   add_index "party_scores", ["user_id"], name: "index_party_scores_on_user_id", using: :btree
 
   create_table "professor_scores", force: :cascade do |t|
     t.float    "professor_score", default: 3.0
     t.integer  "university_id"
-    t.integer  "country_id"
     t.integer  "user_id"
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
   end
 
-  add_index "professor_scores", ["country_id"], name: "index_professor_scores_on_country_id", using: :btree
   add_index "professor_scores", ["university_id"], name: "index_professor_scores_on_university_id", using: :btree
   add_index "professor_scores", ["user_id"], name: "index_professor_scores_on_user_id", using: :btree
 
@@ -260,26 +237,22 @@ ActiveRecord::Schema.define(version: 20170713005935) do
   create_table "satisfaction_scores", force: :cascade do |t|
     t.float    "satisfaction_score", default: 3.0
     t.integer  "university_id"
-    t.integer  "country_id"
     t.integer  "user_id"
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
   end
 
-  add_index "satisfaction_scores", ["country_id"], name: "index_satisfaction_scores_on_country_id", using: :btree
   add_index "satisfaction_scores", ["university_id"], name: "index_satisfaction_scores_on_university_id", using: :btree
   add_index "satisfaction_scores", ["user_id"], name: "index_satisfaction_scores_on_user_id", using: :btree
 
   create_table "unive_scores", force: :cascade do |t|
     t.float    "unive_score",   default: 3.0
     t.integer  "university_id"
-    t.integer  "country_id"
     t.integer  "user_id"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
   end
 
-  add_index "unive_scores", ["country_id"], name: "index_unive_scores_on_country_id", using: :btree
   add_index "unive_scores", ["university_id"], name: "index_unive_scores_on_university_id", using: :btree
   add_index "unive_scores", ["user_id"], name: "index_unive_scores_on_user_id", using: :btree
 
@@ -341,19 +314,15 @@ ActiveRecord::Schema.define(version: 20170713005935) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
-  add_foreign_key "academic_scores", "countries"
   add_foreign_key "academic_scores", "universities"
   add_foreign_key "academic_scores", "users"
   add_foreign_key "accreditations", "careers"
   add_foreign_key "accreditations", "universities"
   add_foreign_key "accreditations", "users"
-  add_foreign_key "admission_scores", "countries"
   add_foreign_key "admission_scores", "universities"
   add_foreign_key "admission_scores", "users"
-  add_foreign_key "alumni_scores", "countries"
   add_foreign_key "alumni_scores", "universities"
   add_foreign_key "alumni_scores", "users"
-  add_foreign_key "careers", "countries"
   add_foreign_key "careers", "universities"
   add_foreign_key "careers", "users"
   add_foreign_key "current_jobs", "careers"
@@ -362,22 +331,16 @@ ActiveRecord::Schema.define(version: 20170713005935) do
   add_foreign_key "ex_students", "careers"
   add_foreign_key "ex_students", "universities"
   add_foreign_key "ex_students", "users"
-  add_foreign_key "finantial_scores", "countries"
   add_foreign_key "finantial_scores", "universities"
   add_foreign_key "finantial_scores", "users"
-  add_foreign_key "graduation_scores", "countries"
   add_foreign_key "graduation_scores", "universities"
   add_foreign_key "graduation_scores", "users"
-  add_foreign_key "infraestructure_scores", "countries"
   add_foreign_key "infraestructure_scores", "universities"
   add_foreign_key "infraestructure_scores", "users"
-  add_foreign_key "investment_scores", "countries"
   add_foreign_key "investment_scores", "universities"
   add_foreign_key "investment_scores", "users"
-  add_foreign_key "party_scores", "countries"
   add_foreign_key "party_scores", "universities"
   add_foreign_key "party_scores", "users"
-  add_foreign_key "professor_scores", "countries"
   add_foreign_key "professor_scores", "universities"
   add_foreign_key "professor_scores", "users"
   add_foreign_key "rankings", "careers"
@@ -386,10 +349,8 @@ ActiveRecord::Schema.define(version: 20170713005935) do
   add_foreign_key "reviews", "careers"
   add_foreign_key "reviews", "universities"
   add_foreign_key "reviews", "users"
-  add_foreign_key "satisfaction_scores", "countries"
   add_foreign_key "satisfaction_scores", "universities"
   add_foreign_key "satisfaction_scores", "users"
-  add_foreign_key "unive_scores", "countries"
   add_foreign_key "unive_scores", "universities"
   add_foreign_key "unive_scores", "users"
   add_foreign_key "universities", "countries"

@@ -3,7 +3,7 @@ class CreateCareers < ActiveRecord::Migration
     create_table :careers do |t|
       t.references :user, index: true, foreign_key: true
       t.references :university, index: true, foreign_key: true
-      t.references :country, index: true, foreign_key: true
+      
       t.string :name
       t.string :area
       t.text :description

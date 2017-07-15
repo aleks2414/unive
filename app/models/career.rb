@@ -1,7 +1,6 @@
 class Career < ActiveRecord::Base
   belongs_to :user
   belongs_to :university
-  belongs_to :country
 
 has_many :reviews
 has_many :ex_students

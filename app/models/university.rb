@@ -1,7 +1,7 @@
 class University < ActiveRecord::Base
   belongs_to :user
   belongs_to :country
-  has_many :unive_scores
+has_many :unive_scores
 has_many :academic_scores
 has_many :party_scores
 has_many :satisfaction_scores
@@ -13,6 +13,7 @@ has_many :professor_scores
 has_many :investment_scores
 has_many :finantial_scores
 has_many :careers
+
 
 has_many :reviews
 has_many :ex_students

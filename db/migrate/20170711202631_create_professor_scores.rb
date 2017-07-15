@@ -3,7 +3,7 @@ class CreateProfessorScores < ActiveRecord::Migration
     create_table :professor_scores do |t|
       t.float :professor_score, default: 3
       t.references :university, index: true, foreign_key: true
-      t.references :country, index: true, foreign_key: true
+      
       t.references :user, index: true, foreign_key: true
 
       t.timestamps null: false

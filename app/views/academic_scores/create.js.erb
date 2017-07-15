@@ -3,13 +3,12 @@
 // page[:review_form].reset
 // page.replace_html :notice, flash[:notice]
 // flash.discard
-<% if @unive_score.errors.empty? %>
+<% if @academic_score.errors.empty? %>
 $('.alert').html("El producto ha sido creado con éxito").show();
-
 $("#academic_reviews_count").html("<%= pluralize(@university.average_academic_score,'') %>");
 $("#academic_review_form")[0].reset();
 $('#AcademicmyModal').modal('hide');
 <% else %>
 // show first error
-alert('<%= @unive_score.errors.full_messages[0] %>');
+alert('<%= @academic_score.errors.full_messages[0] %>');
 <% end %>

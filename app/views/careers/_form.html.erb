@@ -1,4 +1,4 @@
-<%= form_for [@country, @university, @career] do |f| %>
+<%= form_for [@university, @career] do |f| %>
   <% if @career.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@career.errors.count, "error") %> prohibited this career from being saved:</h2>

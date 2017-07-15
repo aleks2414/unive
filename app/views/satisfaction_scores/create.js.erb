@@ -3,7 +3,7 @@
 // page[:review_form].reset
 // page.replace_html :notice, flash[:notice]
 // flash.discard
-<% if @unive_score.errors.empty? %>
+<% if @satisfaction_score.errors.empty? %>
 $('.alert').html("El producto ha sido creado con éxito").show();
 
 $("#satisfaction_reviews_count").html("<%= pluralize(@university.average_satisfaction_score,'') %>");
@@ -11,5 +11,5 @@ $("#satisfaction_review_form")[0].reset();
 $('#SatisfactionmyModal').modal('hide');
 <% else %>
 // show first error
-alert('<%= @unive_score.errors.full_messages[0] %>');
+alert('<%= @satisfaction_score.errors.full_messages[0] %>');
 <% end %>

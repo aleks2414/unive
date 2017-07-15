@@ -23,7 +23,7 @@
 <p>
   <strong>Name:</strong>
   
-  <%= best_in_place [@country, @university], :name, :place_holder => "Click me to add content!" %>
+  <%= best_in_place [@university], :name, :place_holder => "Click me to add content!" %>
 </p>
 
 <p>
@@ -184,5 +184,5 @@
 <%= render 'careers' %>
 
 
-<%= link_to 'Edit', edit_country_university_path(@country, @university) %> |
-<%= link_to 'Back', country_universities_path %>
+<%= link_to 'Edit', edit_university_path(@university) %> |
+<%= link_to 'Back', universities_path %>

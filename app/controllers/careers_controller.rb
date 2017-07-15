@@ -1,7 +1,6 @@
 class CareersController < ApplicationController
   before_action :set_career, only: [:show, :edit, :update, :destroy]
   before_action :set_university
-  before_action :set_country
   before_action :authenticate_user!, only: [:new, :edit]
   # GET /careers
   # GET /careers.json
@@ -38,13 +37,12 @@ class CareersController < ApplicationController
   # POST /careers.json
   def create
     @career = Career.new(career_params)
-    @career.country_id = @country.id
     @career.university_id = @university.id
     @career.user_id = current_user.id
 
     respond_to do |format|
       if @career.save
-        format.html { redirect_to country_university_career_path(@country, @university, @career), notice: 'Career was successfully created.' }
+        format.html { redirect_to university_career_path(@university, @career), notice: 'Career was successfully created.' }
         format.json { render :show, status: :created, location: @career }
       else
         format.html { render :new }
@@ -58,7 +56,7 @@ class CareersController < ApplicationController
   def update
     respond_to do |format|
       if @career.update(career_params)
-        format.html { redirect_to country_university_career_path(@country, @university, @career), notice: 'Career was successfully updated.' }
+        format.html { redirect_to university_career_path(@university, @career), notice: 'Career was successfully updated.' }
         format.json { render :show, status: :ok, location: @career }
       else
         format.html { render :edit }
@@ -87,12 +85,8 @@ class CareersController < ApplicationController
       @university = University.friendly.find(params[:university_id])
     end
 
-    def set_country
-      @country = Country.friendly.find(params[:country_id])
-    end
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def career_params
-      params.require(:career).permit(:user_id, :university_id, :country_id, :name, :area, :description, :for_who, :duration, :modality, :shift, :email, :website, :facebook, :twitter, :linkedin, :blog, :aprox_cost)
+      params.require(:career).permit(:user_id, :university_id, :name, :area, :description, :for_who, :duration, :modality, :shift, :email, :website, :facebook, :twitter, :linkedin, :blog, :aprox_cost)
     end
 end

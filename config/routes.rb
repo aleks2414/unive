@@ -4,28 +4,29 @@ Rails.application.routes.draw do
   resources :careers
   get 'alumni/alumni'
 
-  resources :countries do
-    resources :universities do
-      resources :unive_scores
-      resources :academic_scores
-      resources :party_scores
-      resources :satisfaction_scores
-      resources :infraestructure_scores
-      resources :alumni_scores
-      resources :admission_scores
-      resources :graduation_scores
-      resources :professor_scores
-      resources :investment_scores
-      resources :finantial_scores
-      resources :careers do
-        resources :reviews
-        resources :ex_students
-        resources :accreditations
-        resources :rankings
-        resources :current_jobs
-      end
+  resources :countries
+  
+  resources :universities do
+    resources :unive_scores
+    resources :academic_scores
+    resources :party_scores
+    resources :satisfaction_scores
+    resources :infraestructure_scores
+    resources :alumni_scores
+    resources :admission_scores
+    resources :graduation_scores
+    resources :professor_scores
+    resources :investment_scores
+    resources :finantial_scores
+    resources :careers do
+      resources :reviews
+      resources :ex_students
+      resources :accreditations
+      resources :rankings
+      resources :current_jobs
     end
   end
+  
 
 
   devise_for :users

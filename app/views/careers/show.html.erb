@@ -2,7 +2,7 @@
 
 <p>
   <strong>Name:</strong>
-  <%= best_in_place_if user_signed_in?, [@country, @university, @career], :name, :place_holder => "Click me to add content!" %>
+  <%= best_in_place_if user_signed_in?, [@university, @career], :name, :place_holder => "Click me to add content!" %>
 </p>
 
 <p>
@@ -107,5 +107,5 @@
 
 
 
-<%= link_to 'Edit', edit_country_university_career_path(@country, @university, @career) %> |
-<%= link_to 'Back', country_university_path(@country, @university) %>
+<%= link_to 'Edit', edit_university_career_path(@university, @career) %> |
+<%= link_to 'Back', university_path(@university) %>

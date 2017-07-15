@@ -11,7 +11,7 @@
       </div>
       <div class="modal-body">
 
-<%= form_for [@country,@university, @alumni_score], remote: true, :html => {:id => 'alumni_review_form'} do |f| %>
+<%= form_for [@university, @alumni_score], remote: true, :html => {:id => 'alumni_review_form'} do |f| %>
   <% if @alumni_score.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@alumni_score.errors.count, "error") %> prohibited this alumni_score from being saved:</h2>
