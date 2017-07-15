@@ -8,6 +8,12 @@
 </head>
 <body>
 
+<% if alert %>
+	<p class="alert"><%= alert %></p>
+<% elsif notice %>
+	<p class="notice"><%= notice %></p>
+<% end %>
+
 <ul>
 <% if user_signed_in? %>
   <li><a href="<%= destroy_user_session_path %>" data-method='delete'>Cerrar Sesión</a></li>

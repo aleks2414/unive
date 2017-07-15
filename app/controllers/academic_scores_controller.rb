@@ -3,7 +3,7 @@ class AcademicScoresController < ApplicationController
 before_action :set_academic_scores, only: [:show, :edit, :update, :destroy]
   before_action :set_university
   before_action :set_country
-  before_action :authenticate_user!, only: [:new, :edit]
+  before_action :authenticate_user!, only: [:create, :edit]
 
 def new
   @academic_score = @university.academic_scores.new

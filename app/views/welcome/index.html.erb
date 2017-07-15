@@ -1,0 +1,39 @@
+<% @countries.each do |country| %>
+<% country.universities.each do |university| %>
+      <tr>
+        <td><%= university.user %></td>
+        <td><%= university.country %></td>
+        <td><%= university.option %></td>
+        <td><%= university.private_or_public %></td>
+        <td><%= university.name %></td>
+        <td><%= university.description %></td>
+        <td><%= university.fundation %></td>
+        <td><%= university.rector %></td>
+        <td><%= university.email %></td>
+        <td><%= university.facebook %></td>
+        <td><%= university.twitter %></td>
+        <td><%= university.linkedin %></td>
+        <td><%= university.website %></td>
+        <td><%= university.link_admission %></td>
+        <td><%= university.address %></td>
+        <td><%= university.longitude %></td>
+        <td><%= university.latitude %></td>
+        <td><%= university.logo %></td>
+        <td><%= university.many_proffesors %></td>
+        <td><%= university.many_students %></td>
+        <td><%= university.is_wifi %></td>
+        <td><%= university.is_cafe %></td>
+        <td><%= university.is_safe %></td>
+        <td><%= university.is_libray %></td>
+        <td><%= university.is_job_help %></td>
+        <td><%= university.is_student_exchange %></td>
+        <td><%= university.is_spiritual %></td>
+        <td><%= university.sports %></td>
+        <td><%= university.cutural %></td>
+        <td><%= university.languages %></td>
+        <td><%= link_to 'Show', country_university_path(country, university) %></td>
+        <td><%= link_to 'Edit', edit_country_university_path(country, university) %></td>
+        <td><%= link_to 'Destroy', country_university_path(country, university), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    <% end %>
