@@ -21,6 +21,17 @@ has_many :accreditations
 has_many :rankings
 has_many :current_jobs
 
+geocoded_by :full_address
+  after_validation :geocode, if: :name_changed?
+
+  def full_address
+    "#{name},#{country.name}"
+  end
+
+reverse_geocoded_by :latitude, :longitude,
+  :address => :address
+before_save :reverse_geocode, if: :name_changed?
+
   def average_score
     unive_scores.count == 0 ? 0 : unive_scores.average(:unive_score).round(2)
   end

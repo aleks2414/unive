@@ -7,9 +7,9 @@
 
     <%#= f.select :country_id_eq, options_from_collection_for_select(Country.all, "id", "name"), include_blank: true %>
 
-
-  <%= f.check_box :is_wifi_true %>
   <%= f.label :is_wifi_true %>
+  <%= f.check_box :is_wifi_true %>
+  
 
   <%#= f.submit "search" %>
 <% end %>
@@ -20,9 +20,15 @@
   <%= content_tag :th, sort_link(@q, :careers_name) %>
 <% end %>
 
+<div id="mapdisplay">
+    <%= render 'map' %>
+</div>
+
 <div id="results">
     <%= render 'results' %>
 </div>
+
+
 
 <br>
 

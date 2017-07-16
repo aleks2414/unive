@@ -8,6 +8,8 @@ class UniversitiesController < ApplicationController
     @q = University.ransack(params[:q])
     @universities = @q.result.includes(:country, :careers).to_a.uniq
 
+    @arrUnis = @universities.to_a
+
       respond_to do |format|
       format.html # index.html.erb
       format.js
