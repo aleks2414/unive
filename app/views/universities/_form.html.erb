@@ -16,25 +16,27 @@
   <%= collection_select(:university, :country_id, Country.all, :id, :name, {:prompt => 'Select Country'}) %>
 </div>
 
-  <div class="field">
-    <%= f.label :option %><br>
-    <%= f.text_field :option %>
-  </div>
+<!--   <div class="field">
+    <%#= f.label :option %><br>
+    <%#= f.text_field :option %>
+  </div> -->
   <div class="field">
     <%= f.label :private_or_public %><br>
-    <%= f.text_field :private_or_public %>
+    <%= f.select :private_or_public, [["Private"], ["Public"]]%>
   </div>
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
+
   <div class="field">
     <%= f.label :description %><br>
     <%= f.text_area :description %>
   </div>
+
   <div class="field">
     <%= f.label :fundation %><br>
-    <%= f.text_field :fundation %>
+    <%= f.date_field :fundation %>
   </div>
   <div class="field">
     <%= f.label :rector %><br>
@@ -42,51 +44,51 @@
   </div>
   <div class="field">
     <%= f.label :email %><br>
-    <%= f.text_field :email %>
+    <%= f.email_field :email %>
   </div>
   <div class="field">
     <%= f.label :facebook %><br>
-    <%= f.text_field :facebook %>
+    <%= f.url_field :facebook %>
   </div>
   <div class="field">
     <%= f.label :twitter %><br>
-    <%= f.text_field :twitter %>
+    <%= f.url_field :twitter %>
   </div>
   <div class="field">
     <%= f.label :linkedin %><br>
-    <%= f.text_field :linkedin %>
+    <%= f.url_field :linkedin %>
   </div>
   <div class="field">
     <%= f.label :website %><br>
-    <%= f.text_field :website %>
+    <%= f.url_field :website %>
   </div>
   <div class="field">
     <%= f.label :link_admission %><br>
-    <%= f.text_field :link_admission %>
+    <%= f.url_field :link_admission %>
   </div>
   <div class="field">
     <%= f.label :address %><br>
     <%= f.text_field :address %>
   </div>
-  <div class="field">
+  <div class="field hidden">
     <%= f.label :longitude %><br>
     <%= f.text_field :longitude %>
   </div>
-  <div class="field">
+  <div class="field hidden">
     <%= f.label :latitude %><br>
     <%= f.text_field :latitude %>
   </div>
   <div class="field">
     <%= f.label :logo %><br>
-    <%= f.text_field :logo %>
+    <%= f.file_field :logo %>
   </div>
   <div class="field">
     <%= f.label :many_proffesors %><br>
-    <%= f.text_field :many_proffesors %>
+    <%= f.number_field :many_proffesors %>
   </div>
   <div class="field">
     <%= f.label :many_students %><br>
-    <%= f.text_field :many_students %>
+    <%= f.number_field :many_students %>
   </div>
   <div class="field">
     <%= f.label :is_wifi %><br>
@@ -110,20 +112,13 @@
   </div>
   <div class="field">
     <%= f.label :is_student_exchange %><br>
-    <%= f.text_field :is_student_exchange %>
+    <%= f.check_box :is_student_exchange %>
   </div>
   <div class="field">
     <%= f.label :is_spiritual %><br>
     <%= f.check_box :is_spiritual %>
   </div>
-  <div class="field">
-    <%= f.label :sports %><br>
-    <%= f.text_field :sports %>
-  </div>
-  <div class="field">
-    <%= f.label :cutural %><br>
-    <%= f.text_field :cutural %>
-  </div>
+
 
 
 

@@ -5,6 +5,12 @@ class UniversitiesController < ApplicationController
   # GET /universities
   # GET /universities.json
   def index
+
+ if params[:q].present?
+   clear_boolean(params[:q], :country_id_eq)
+   clear_boolean(params[:q], :is_wifi_eq)
+ end
+
     @q = University.ransack(params[:q])
     @universities = @q.result.includes(:country, :careers).to_a.uniq
 
@@ -14,6 +20,10 @@ class UniversitiesController < ApplicationController
       format.html # index.html.erb
       format.js
     end
+  end
+
+  def clear_boolean(q, condition)
+    q.delete(condition) if q[condition] == "0"
   end
 
   # GET /universities/1

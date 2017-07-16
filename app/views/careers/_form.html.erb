@@ -11,13 +11,21 @@
     </div>
   <% end %>
 
+<!--   <div class="field">
+    <%#= f.label :option %><br>
+    <%= f.select :option, [["Graduate"], ["Undergraduate"], ["Specialist"], ["Doctoral"], ["Master"]]%>
+  </div> -->
+
+
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
+
+
   <div class="field">
     <%= f.label :area %><br>
-    <%= f.text_field :area %>
+    <%= f.select :area, [["Agricultural"], ["Art and Architecture"], ["Exact and Natural Sciences"], ["Social Sciences"], ["Law"], ["Human Studies"], ["Education"], ["Technology"], ["Health Studies"], ["Health Studies"], ["Administration and Trade Studies"], ["Religious Studies"]]%>
   </div>
   <div class="field">
     <%= f.label :description %><br>
@@ -33,11 +41,11 @@
   </div>
   <div class="field">
     <%= f.label :modality %><br>
-    <%= f.text_field :modality %>
+    <%= f.select :modality, [["Face to face"], ["Online"]]%>
   </div>
   <div class="field">
     <%= f.label :shift %><br>
-    <%= f.text_field :shift %>
+    <%= f.select :shift, [["morning shift"], ["afternoon shift"]]%>
   </div>
   <div class="field">
     <%= f.label :email %><br>
