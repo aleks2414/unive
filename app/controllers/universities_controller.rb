@@ -5,7 +5,13 @@ class UniversitiesController < ApplicationController
   # GET /universities
   # GET /universities.json
   def index
-    @universities = University.all
+    @q = University.ransack(params[:q])
+    @universities = @q.result.includes(:country, :careers).to_a.uniq
+
+      respond_to do |format|
+      format.html # index.html.erb
+      format.js
+    end
   end
 
   # GET /universities/1

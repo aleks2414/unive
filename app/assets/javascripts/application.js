@@ -20,3 +20,14 @@
 //= require best_in_place
 //= require_tree .
 
+
+$(function() {
+  $("#my_search input").keyup(function() {
+    $.get($("#my_search").attr("action"), $("#my_search").serialize(), null, "script");
+    return false;
+  });
+  $("#my_search input").click(function() {
+    $.get($("#my_search").attr("action"), $("#my_search").serialize(), null, "script");
+    
+  });
+});

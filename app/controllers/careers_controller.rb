@@ -57,10 +57,10 @@ class CareersController < ApplicationController
     respond_to do |format|
       if @career.update(career_params)
         format.html { redirect_to university_career_path(@university, @career), notice: 'Career was successfully updated.' }
-        format.json { render :show, status: :ok, location: @career }
+        format.json { respond_with_bip(@career) }
       else
         format.html { render :edit }
-        format.json { render json: @career.errors, status: :unprocessable_entity }
+        format.json { respond_with_bip(@career) }
       end
     end
   end
