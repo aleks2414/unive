@@ -168,6 +168,7 @@ input[type="search"], select {
   cursor: pointer;
   margin-top: 1rem;
   background-color: transparent;
+  margin-bottom: 5px;
 }
 
 #magic_card {
@@ -213,12 +214,63 @@ input[type="search"], select {
     margin-top: 0px;
     border-bottom: 1px solid #E8E8E8;
     border-top: 1px solid #E8E8E8;
-    font-weight: 400;
+    font-weight: 700;
     font-size: 15px;
     text-transform: uppercase;
     padding-left: 8px;
     line-height: 19px;
     height: 41px;
     padding-top: 10px;
-    color: $red;
+    color: #4f4f4f;
   }
+
+  @media (max-width: 800px)
+{
+
+#banner {
+background-attachment: unset;
+}
+}
+
+#banner {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  margin-bottom: 1rem;
+  background-attachment: fixed;
+  background-blend-mode: multiply;
+  background-color: #989898;
+  padding: 30px;
+
+  h1 {
+    color: white;
+    text-transform: uppercase;
+  }
+}
+
+.white {
+  color: white;
+}
+
+#magic {
+  background-color: white;
+  padding: 20px;
+  border: solid 1px #e2e8ea;
+  -webkit-box-shadow: 6px 6px 2px rgba(46,133,155,0.04);
+  box-shadow: 6px 6px 2px rgba(46,133,155,0.04);
+  margin-bottom: 20px;
+  p {
+    margin-bottom: 40px;
+  }
+  h5 {
+    color: #919499;
+    span {
+      margin-right: 5px;
+    }
+  }
+}
+
+.cover_home {
+  background-image: image-url("innova_cover.jpg");
+  height: 35vh;
+}

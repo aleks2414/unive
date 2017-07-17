@@ -1,19 +1,132 @@
-<p id="notice"><%= notice %></p>
+<br><div id= "banner" class="cover_home">
+  <h4 class="white"><%= @university.country.name%></h4>
+  <p class="white"><%= @university.address%></p>
+  <h1><%= @university.name%></h1>
+  <h1 class="element typed"></h1>
+</div>
 
-<p>
-  <strong>User:</strong>
-  <%= @university.user %>
-</p>
 
-<p>
-  <strong>Country:</strong>
-  <%= @university.country %>
-</p>
+<div class="row">
+  <div class="col-md-3">
+    <div id="magic">
+      <h4 class="titulo">U-finder Score</h4>
+      <%= render 'unive_score' %>
+    </div>
 
-<p>
-  <strong>Option:</strong>
-  <%= @university.option %>
-</p>
+    <div id="magic">
+      <h4 class="titulo">Academic Score</h4>
+      <%= render 'academicscore' %>
+
+      <h4 class="titulo">Infraestructure Score</h4>
+      <%= render 'infraestructurescore' %>
+
+      <h4 class="titulo">Proffesors Score</h4>
+      <%= render 'professorscore' %>
+
+      <h4 class="titulo">Alumni Score</h4>
+      <%= render 'alumniscore' %>
+
+
+      <h4 class="titulo">Cost Score</h4>
+      <%= render 'investmentscore' %>
+
+      <h4 class="titulo">Satisfaction Score</h4>
+      <%= render 'satisfactionscore' %>
+
+      <h4 class="titulo">Party Life Score</h4>
+      <%= render 'partyscore' %>
+
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div id="magic">
+      <h4 class="titulo"><%= @university.name.truncate(50) %></h4>
+
+      <p><%= @university.description %></p>
+
+      <h4 class="titulo">Foundation date</h4>
+      <p><%= @university.fundation %></p>
+
+      <h4 class="titulo">University rector</h4>
+      <p><%= @university.rector %></p>
+
+    </div>
+
+    <div id="magic">
+      <h4 class="titulo">Location</h4>
+    </div>
+  </div>
+  <div class="col-md-3">
+  <div id="magic">
+    <h4 class="titulo">Share</h4>
+  </div>
+    <div id="magic">
+      <h4 class="titulo">Contact</h4>
+      <h5><span class="fa fa-globe"> </span>  <%= @university.website %></h5>
+      <h5><span class="fa fa-envelope"> </span>  <%= @university.email %></h5>
+      <h5><span class="fa fa-facebook"> </span>  <%= @university.facebook %></h5>
+      <h5><span class="fa fa-twitter"> </span>  <%= @university.twitter %></h5>
+      <h5><span class="fa fa-linkedin"> </span>  <%= @university.linkedin %></h5>
+
+      <p></p>
+      <h4 class="titulo">Admission Link</h4>
+      <h5><span class="fa fa-external-link"> </span>  <%= @university.link_admission %></h5>
+    </div>
+
+    <div id="magic">
+      <h4 class="titulo">Amenities</h4>
+      <% if @university.is_wifi == true %>
+      <h5><span class="fa fa-wifi"></span>Wifi</h5>
+      <% else %>
+      <h5><span class="fa fa-wifi"></span><strike>Wifi</strike></h5>
+      <% end %>
+
+      <% if @university.is_cafe == true %>
+      <h5><span class="fa fa-coffee"></span>Cafeteria</h5>
+      <% else %>
+      <h5><span class="fa fa-coffee"></span><strike>Cafeteria</strike></h5>
+      <% end %>
+
+      <% if @university.is_libray == true %>
+      <h5><span class="fa fa-book"></span>Library</h5>
+      <% else %>
+      <h5><span class="fa fa-book"></span><strike>Library</strike></h5>
+      <% end %>
+
+      <% if @university.is_job_help == true %>
+      <h5><span class="fa fa-search"></span>Job Board</h5>
+      <% else %>
+      <h5><span class="fa fa-search"></span><strike>Job Board</strike></h5>
+      <% end %>
+
+      <% if @university.is_student_exchange == true %>
+      <h5><span class="fa fa-plane"></span>Study Abroad</h5>
+      <% else %>
+      <h5><span class="fa fa-plane"></span><strike>Study Abroad</strike></h5>
+      <% end %>
+
+      <% if @university.is_safe == true %>
+      <h5><span class="fa fa-hand-peace-o"></span>Safe Campus</h5>
+      <% else %>
+      <h5><span class="fa fa-hand-peace-o"></span><strike>Safe Campus</strike></h5>
+      <% end %>
+
+      <% if @university.is_spiritual == true %>
+      <h5><span class="fa fa-bell"></span>Spiritual University</h5>
+      <% else %>
+      <h5><span class="fa fa-bell"></span><strike>Spiritual University</strike></h5>
+      <% end %>
+    </div>
+
+    <div id="magic">
+      <h4 class="titulo">Sports</h4>
+    </div>
+
+    <div id="magic">
+      <h4 class="titulo">Cultural Activities</h4>
+    </div>
+  </div>
+</div>
 
 <p>
   <strong>Private or public:</strong>
@@ -26,65 +139,6 @@
   <%= best_in_place [@university], :name, :place_holder => "Click me to add content!" %>
 </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @university.description %>
-</p>
-
-<p>
-  <strong>Fundation:</strong>
-  <%= @university.fundation %>
-</p>
-
-<p>
-  <strong>Rector:</strong>
-  <%= @university.rector %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @university.email %>
-</p>
-
-<p>
-  <strong>Facebook:</strong>
-  <%= @university.facebook %>
-</p>
-
-<p>
-  <strong>Twitter:</strong>
-  <%= @university.twitter %>
-</p>
-
-<p>
-  <strong>Linkedin:</strong>
-  <%= @university.linkedin %>
-</p>
-
-<p>
-  <strong>Website:</strong>
-  <%= @university.website %>
-</p>
-
-<p>
-  <strong>Link admission:</strong>
-  <%= @university.link_admission %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @university.address %>
-</p>
-
-<p>
-  <strong>Longitude:</strong>
-  <%= @university.longitude %>
-</p>
-
-<p>
-  <strong>Latitude:</strong>
-  <%= @university.latitude %>
-</p>
 
 <p>
   <strong>Logo:</strong>
@@ -101,83 +155,12 @@
   <%= @university.many_students %>
 </p>
 
-<p>
-  <strong>Is wifi:</strong>
-  <%= @university.is_wifi %>
-</p>
-
-<p>
-  <strong>Is cafe:</strong>
-  <%= @university.is_cafe %>
-</p>
-
-<p>
-  <strong>Is safe:</strong>
-  <%= @university.is_safe %>
-</p>
-
-<p>
-  <strong>Is libray:</strong>
-  <%= @university.is_libray %>
-</p>
-
-<p>
-  <strong>Is job help:</strong>
-  <%= @university.is_job_help %>
-</p>
-
-<p>
-  <strong>Is student exchange:</strong>
-  <%= @university.is_student_exchange %>
-</p>
-
-<p>
-  <strong>Is spiritual:</strong>
-  <%= @university.is_spiritual %>
-</p>
-
-<p>
-  <strong>Sports:</strong>
-  <%= @university.sports %>
-</p>
-
-<p>
-  <strong>Cutural:</strong>
-  <%= @university.cutural %>
-</p>
 
 <p>
   <strong>Languages:</strong>
   <%= @university.languages %>
 </p>
 
-
-
-
-
-<!--  -->
-
-<%= render 'unive_score' %>
-
-<%= render 'academicscore' %>
-
-<%= render 'partyscore' %>
-
-<%= render 'satisfactionscore' %>
-
-<%= render 'infraestructurescore' %>
-
-<%= render 'alumniscore' %>
-
-<%= render 'admissionscore' %>
-
-<%= render 'graduationscore' %>
-
-<%= render 'professorscore' %>
-
-<%= render 'investmentscore' %>
-
-<%= render 'finantialscore' %>
 
 <!--  -->
 
