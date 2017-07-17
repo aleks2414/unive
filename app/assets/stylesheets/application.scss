@@ -28,16 +28,16 @@ font-family:"Gotham_bold";
 }
 
 $light_grey: #F9F9FA;
-$grey: #f1f4f9;
+$grey: #f2f2f2;
 $dark_grey: #3c3c3c;
-$red: #FC5185;
+$red: #11AFD3;
 $blue: #3FC1C9;
 
 body {
-margin-top: 80px;
 -webkit-font-smoothing: antialiased;
 background-color: #f2f2f2;
-color: #515151;
+color: #052D49;
+text-rendering: optimizeLegibility;
 }     
 
 h1, h2, h3, h4, h5, h6 {    
@@ -60,5 +60,165 @@ p, a {
 
 #map {
 width: 100%;
-height: 300px;
+height: 200px;
+margin-bottom: 20px;
 }
+
+#my_search {
+  label {
+    cursor:pointer;
+  }
+  input:checked ~ label {
+   background-color: $red;
+   color: white;
+ }
+}
+
+.button {
+  transition: background-color .15s linear;
+  font-size: 13px;
+  min-width: 80px;
+  font-family: 'Gotham_bold', sans-serif !important;
+  border-radius: 2px;
+  padding: 5px;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  margin-top: 1rem;
+  background-color: transparent;
+}
+
+.button_red {
+  color: $red;
+  background-color: $grey;
+  border: solid 1.2px $red;
+  &:hover {
+    color: white;
+    background-color: $red;
+  }
+
+  &:hover > a {
+  color: white;
+  background-color: $red;
+  }
+
+}
+
+.button_block {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  margin-top: 2rem;
+  font-weight: 700;
+}
+.center {
+  text-align: center;
+}
+
+#navi {
+  li {
+    float: right;
+    display: inline;
+    margin-right: 30px;
+  }
+}
+
+#inicio {
+  text-align: center;
+}
+
+#cuadro {
+  background-color: white;
+  border: solid 1px #e2e8ea;
+  -webkit-box-shadow: 6px 6px 2px rgba(46,133,155,0.04);
+  box-shadow: 6px 6px 2px rgba(46,133,155,0.04);
+  padding: 20px;
+  margin: 20px 0;
+
+input[type="search"], select {
+  width: 100%;
+  height: 3.5rem;
+  border:none;
+  border:1.3px solid $red;
+  padding-left: 10px;
+  margin-bottom: 1rem;
+  background-color: white !important;
+  }
+
+  i {
+    position: absolute;
+    right: 20px;
+    top: 5px;
+    color: $red;
+  }
+
+}
+
+.botones {
+  transition: background-color .15s linear;
+  font-size: 15px;
+  font-family: 'Gotham_bold', sans-serif !important;
+  border-radius: 2px;
+  padding: 5px;
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  margin-top: 1rem;
+  background-color: transparent;
+}
+
+#magic_card {
+  background-color: white;
+  padding: 20px;
+  border: solid 1px #e2e8ea;
+  -webkit-box-shadow: 6px 6px 2px rgba(46,133,155,0.04);
+  box-shadow: 6px 6px 2px rgba(46,133,155,0.04);
+  margin-bottom: 20px;
+  height: 370px;
+  .imagen {
+  height:100px;
+  line-height:100px;
+  overflow:hidden;
+  text-align:center;
+  width:100%;
+  img {
+    margin:-100%
+  }
+  }
+  h3 {
+    text-align: center;
+    font-weight: 900;
+  }
+  h2 {
+    position: absolute;
+    top: 0px;
+    font-size: 20px;
+  }
+  .izq {
+    position: absolute;
+  }
+  .der {
+    display: inline;
+    float: right;
+    i {
+      size: 5px;
+    }
+  }
+}
+
+  .titulo {
+    margin-top: 0px;
+    border-bottom: 1px solid #E8E8E8;
+    border-top: 1px solid #E8E8E8;
+    font-weight: 400;
+    font-size: 15px;
+    text-transform: uppercase;
+    padding-left: 8px;
+    line-height: 19px;
+    height: 41px;
+    padding-top: 10px;
+    color: $red;
+  }

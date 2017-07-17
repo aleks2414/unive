@@ -1,25 +1,39 @@
+<div id="cuadro">
+
 <%= search_form_for @q, remote: true, id: 'my_search' do |f| %>
-  <%= f.label :Search_cont %>
-  <%= f.search_field :name_or_country_name_or_careers_name_cont %>
+  <div class="row">
+  
+  <div class="col-md-12">
+  <div class="chic">
+  <%= f.search_field :name_or_country_name_or_careers_name_cont, placeholder: "Search for Universities, Careers or countries ..." %>
+  </div>
+  <i class="material-icons mdl-textfield__label__icon">search</i>
+  </div>
+  </div>
 
-  <%= f.label :Mexico %>
-  <%= f.check_box :country_id_eq, :value => 'Mexico', :id => 'MexicoP' %>
+  <div class="row">
 
-    <%#= f.select :country_id_eq, options_from_collection_for_select(Country.all, "id", "name"), include_blank: true %>
+  <div class="col-md-3 col-xs-6">
+  <span> <%= f.check_box :country_id_eq, :value => 'Mexico', :id => 'MexicoP', class: "hidden" %>
+  <label for="MexicoP" class="botones button_red">México</label></span>
+  </div>
 
-  <%= f.label :Wifi %>
-  <%= f.check_box :is_wifi_eq, :value => true, :id => 'Wifi' %>
+  <div class="col-md-3 col-xs-6">
+  <span> <%= f.check_box :is_wifi_eq, :value => true, :id => 'Wifi', class: "hidden" %>
+  <label for="Wifi" class="botones button_red">Wifi</label></span>
+  </div>
+
+
+
+  </div>
 
   
 
+
   <%#= f.submit "search" %>
 <% end %>
+</div>
 
-<%= content_tag :table do %>
-  <%= content_tag :th, sort_link(@q, :name) %>
-  <%= content_tag :th, sort_link(@q, :country_name) %>
-  <%= content_tag :th, sort_link(@q, :careers_name) %>
-<% end %>
 
 <div id="mapdisplay">
     <%= render 'map' %>

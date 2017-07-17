@@ -1,2 +1,0 @@
-json.extract! university, :id, :user_id, :country_id, :option, :private_or_public, :name, :description, :fundation, :rector, :email, :facebook, :twitter, :linkedin, :website, :link_admission, :address, :longitude, :latitude, :logo, :many_proffesors, :many_students, :is_wifi, :is_cafe, :is_safe, :is_libray, :is_job_help, :is_student_exchange, :is_spiritual, :sports, :cutural, :languages, :created_at, :updated_at
-json.url university_url(university, format: :json)

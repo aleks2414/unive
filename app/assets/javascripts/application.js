@@ -23,11 +23,11 @@
 
 $(function() {
   $("#my_search input").keyup(function() {
-    $.get($("#my_search").attr("action"), $("#my_search").serialize(), null, "script");
+    $.get($("#my_search").attr("submit"), $("#my_search").serialize(), null, "script");
     return false;
   });
   $("#my_search input").click(function() {
-    $.get($("#my_search").attr("action"), $("#my_search").serialize(), null, "script");
+    $.get($("#my_search").attr("submit"), $("#my_search").serialize(), null, "script");
     
   });
 });
