@@ -27,7 +27,7 @@
     <%= f.number_field :party_score %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "botones button_red" %>
   </div>
 <% end %>
 </div>
@@ -56,7 +56,7 @@
 <% elsif @university.average_party_score.between?(5, 15.99) %>
 <h5><span class="fa fa-star"><span class="fa fa-star"><span class="fa fa-star"><span class="fa fa-star"><span class="fa fa-star"></span>
 <% end %>
-<span id="reviews_count">(<%= @university.average_party_score %>)</span></h5>
+<span id="party_reviews_count">(<%= @university.average_party_score %>)</span></h5>
 
 
 <!-- Trigger the modal with a button -->

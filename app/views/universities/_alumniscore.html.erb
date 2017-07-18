@@ -27,7 +27,7 @@
     <%= f.number_field :alumni_score %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "botones button_red" %>
   </div>
 <% end %>
 </div>
@@ -56,7 +56,7 @@
 <% elsif @university.average_alumni_score.between?(5, 5.99) %>
 <h5><span class="fa fa-star"><span class="fa fa-star"><span class="fa fa-star"><span class="fa fa-star"><span class="fa fa-star"></span>
 <% end %>
-<span id="reviews_count">(<%= @university.average_alumni_score %>)</span></h5>
+<span id="alumni_reviews_count">(<%= @university.average_alumni_score %>)</span></h5>
 
 
 <!-- Trigger the modal with a button -->

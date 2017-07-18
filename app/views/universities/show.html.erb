@@ -6,36 +6,16 @@
 </div>
 
 
+
+
 <div class="row">
   <div class="col-md-3">
     <div id="magic">
       <h4 class="titulo">U-finder Score</h4>
       <%= render 'unive_score' %>
     </div>
-
-    <div id="magic">
-      <h4 class="titulo">Academic Score</h4>
-      <%= render 'academicscore' %>
-
-      <h4 class="titulo">Infraestructure Score</h4>
-      <%= render 'infraestructurescore' %>
-
-      <h4 class="titulo">Proffesors Score</h4>
-      <%= render 'professorscore' %>
-
-      <h4 class="titulo">Alumni Score</h4>
-      <%= render 'alumniscore' %>
-
-
-      <h4 class="titulo">Cost Score</h4>
-      <%= render 'investmentscore' %>
-
-      <h4 class="titulo">Satisfaction Score</h4>
-      <%= render 'satisfactionscore' %>
-
-      <h4 class="titulo">Party Life Score</h4>
-      <%= render 'partyscore' %>
-
+    <div class="hidden-sm hidden-xs">
+    <%= render 'magic' %>
     </div>
   </div>
   <div class="col-md-6">
@@ -43,22 +23,102 @@
       <h4 class="titulo"><%= @university.name.truncate(50) %></h4>
 
       <p><%= @university.description %></p>
-
+      
+      <div class="row">
+      <div class="col-xs-6">
       <h4 class="titulo">Foundation date</h4>
       <p><%= @university.fundation %></p>
-
+      </div>
+      
+      <div class="col-xs-6">
       <h4 class="titulo">University rector</h4>
       <p><%= @university.rector %></p>
+      </div>
+      </div>
+
+      <div class="row">
+      <div class="col-xs-6">
+      <h4 class="titulo"># of professors</h4>
+      <p><%= @university.many_proffesors %></p>
+      </div>
+      
+      <div class="col-xs-6">
+      <h4 class="titulo"># of Students</h4>
+      <p><%= @university.many_students %></p>
+      </div>
+      </div>
 
     </div>
 
     <div id="magic">
       <h4 class="titulo">Location</h4>
+      <div id="map2"></div>
+    </div>
+
+    <div id="magic">
+      <h4 class="titulo">Gallery</h4>
     </div>
   </div>
   <div class="col-md-3">
   <div id="magic">
     <h4 class="titulo">Share</h4>
+
+<div class="row">
+<div class="col-xs-6">
+<a class="icon-facebook botones button_red" rel="nofollow"
+    href="http://www.facebook.com/"
+    onclick="popUp=window.open(
+      'http://www.facebook.com/sharer.php?u=<%="#{request.original_url}"%>',
+      'popupwindow',
+      'scrollbars=yes,width=800,height=400');
+    popUp.focus();
+    return false">
+    <i class="fa fa-facebook fa-lg face"></i>
+  </a>
+</div>
+
+<div class="col-xs-6">
+  <a class="icon-twitter botones button_red" rel="nofollow"
+  href="http://twitter.com/"
+  onclick="popUp=window.open(
+    'http://twitter.com/intent/tweet?text=\'<%= @university.name %>\' by U-finder - <%="#{request.original_url}"%>',
+    'popupwindow',
+    'scrollbars=yes,width=800,height=400');
+  popUp.focus();
+  return false">
+  <i class="fa fa-twitter fa-lg twitter"></i>
+</a>
+</div>
+</div>
+
+<div class="row">
+<div class="col-xs-6">
+<a class="icon-pinterest botones button_red" rel="nofollow"
+href="http://www.pinterest.com/"
+onclick="popUp=window.open(
+  'http://pinterest.com/pin/create/button/?url=<%="#{request.original_url}"%>&amp;media=&amp;description=<%= @university.name %>',
+  'popupwindow',
+  'scrollbars=yes,width=800,height=400');
+popUp.focus();
+return false">
+<i class="fa fa-pinterest fa-lg you"></i>
+</a>
+</div>
+
+<div class="col-xs-6">
+<a class="icon-gplus botones button_red" rel="nofollow"
+href="http://www.plus.google.com/"
+onclick="popUp=window.open(
+  'https://plus.google.com/share?url=<%="#{request.original_url}"%>',
+  'popupwindow',
+  'scrollbars=yes,width=800,height=400');
+popUp.focus();
+return false">
+<i class="fa fa-google-plus fa-lg you"></i>
+</a>
+</div>
+</div>
+
   </div>
     <div id="magic">
       <h4 class="titulo">Contact</h4>
@@ -125,6 +185,10 @@
     <div id="magic">
       <h4 class="titulo">Cultural Activities</h4>
     </div>
+
+    <div class="visible-sm visible-xs">
+    <%= render 'magic' %>
+    </div>
   </div>
 </div>
 
@@ -169,3 +233,27 @@
 
 <%= link_to 'Edit', edit_university_path(@university) %> |
 <%= link_to 'Back', universities_path %>
+
+
+<script>
+
+function initMap() {
+  var myLatLng = {lat: <%= @university.latitude %>, lng: <%= @university.longitude %>};
+
+  var map = new google.maps.Map(document.getElementById('map2'), {
+    zoom: 16,
+    center: myLatLng,
+    scrollwheel: false
+  });
+
+
+  var marker = new google.maps.Marker({
+    position: myLatLng,
+    map: map,
+    title: '<%= @university.name %>'
+  });
+}
+
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6K3XNvvLlBjourkCDTo3CMOUygthuYKo&signed_in=true&callback=initMap"></script>
