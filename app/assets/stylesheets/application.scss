@@ -243,7 +243,7 @@ background-attachment: unset;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  margin-bottom: 1rem;
+  /*margin-bottom: 1rem;*/
   background-attachment: fixed;
   background-blend-mode: multiply;
   background-color: #989898;
@@ -343,3 +343,30 @@ background-attachment: unset;
     }
   }
 
+  #bread {
+    background-color: white;
+    text-align: center;
+    padding: 20px;
+  border: solid 1px #e2e8ea;
+  -webkit-box-shadow: 6px 6px 2px rgba(46,133,155,0.04);
+  box-shadow: 6px 6px 2px rgba(46,133,155,0.04);
+  margin-bottom: 30px;
+  ul {
+    list-style: none;
+    li {
+      display: inline;
+      margin: 0 15px;
+      padding: 10px;
+    }
+  }
+  }
+
+  .active {
+  color: $red;
+  background-color: white;
+  border-bottom: solid 1.5px $red;
+  padding: 10px;
+  a {
+    color: $red;
+  }
+}

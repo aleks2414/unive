@@ -31,7 +31,6 @@
       <tr>
         <td><%= career.user %></td>
         <td><%= career.university %></td>
-        <td><%= career.country %></td>
         <td><%= career.name %></td>
         <td><%= career.area %></td>
         <td><%= career.description %></td>
@@ -46,9 +45,8 @@
         <td><%= career.linkedin %></td>
         <td><%= career.blog %></td>
         <td><%= career.aprox_cost %></td>
-        <td><%= link_to 'Show', career %></td>
-        <td><%= link_to 'Edit', edit_career_path(career) %></td>
-        <td><%= link_to 'Destroy', career, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', university_career_path(@university, career) %></td>
+        <td><%= link_to 'Edit', edit_university_career_path(@university, career) %></td>
       </tr>
     <% end %>
   </tbody>
@@ -56,4 +54,4 @@
 
 <br>
 
-<%= link_to 'New Career', new_career_path %>
+<%= link_to 'New Career', new_university_career_path(@university) %>

@@ -6,6 +6,21 @@
 </div>
 
 
+<div class="row">
+<div class="col-md-12">
+  <div id="bread">
+    <ul>
+      <li class=" <%= 'active' if current_page?(university_path(@university)) %> ">
+        <%= link_to "University Info", university_path(@university) %>
+      </li>
+      <li class=" <%= 'active' if current_page?(university_careers_path(@university)) %> ">
+        <%= link_to "Careers Info", university_careers_path(@university) %>
+      </li>
+    </ul>
+  </div>
+  </div>
+</div>
+
 
 
 <div class="row">

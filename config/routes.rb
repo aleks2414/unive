@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
   
-  resources :careers
   get 'alumni/alumni'
 
   resources :countries
