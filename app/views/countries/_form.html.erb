@@ -19,6 +19,11 @@
     <%= f.label :language %><br>
     <%= f.text_field :language %>
   </div>
+
+  <div class="field">
+    <%= f.label :continent %><br>
+    <%= f.select :continent, [["Africa"], ["Asia"], ["Europe"], ["North America"], ["South America"], ["Ocenia"]]%>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

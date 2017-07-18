@@ -7,8 +7,14 @@ class UniversitiesController < ApplicationController
   def index
 
  if params[:q].present?
-   clear_boolean(params[:q], :country_id_eq)
+   clear_boolean(params[:q], :country_continent_eq)
    clear_boolean(params[:q], :is_wifi_eq)
+   clear_boolean(params[:q], :is_cafe_eq)
+   clear_boolean(params[:q], :is_libray_eq)
+   clear_boolean(params[:q], :is_job_help_eq)
+   clear_boolean(params[:q], :is_student_exchange_eq)
+   clear_boolean(params[:q], :is_spiritual_eq)
+   clear_boolean(params[:q], :is_safe_eq)
  end
 
     @q = University.ransack(params[:q])
