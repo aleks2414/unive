@@ -1,111 +1,199 @@
-<p id="notice"><%= notice %></p>
+<br>
+<h1 class="center upper"><%= @career.name %></h1>
+
+<h3 class="center"><%= @career.university.name %></h3>
+<h5 class="center"><%= @career.university.country.name%></h5>
+<p class="center"><%= @career.university.address%></p>
+<hr>
+
+<br>
+<div class="row">
+<div class="col-md-12">
+  <div id="bread">
+    <ul>
+      <a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">Information</a>
+
+      <a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Mexico')">Reviews</a>
+
+      <a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Tokio')">Alumni</a>
+
+      <a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Ny')">Acreditations</a>
+
+      <a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Paris')">Current Jobs</a>
+
+      <a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Chicago')">World Rankings</a>
+    </ul>
+  </div>
+  </div>
+</div>
+
+<div id="row">
+  <div class="col-md-3">
+    <div id="magic">
+    <h4 class="titulo">U-finder Score</h4>
+    <%= render 'universities/unive_score' %>
+  </div>
+
+  <div id="magic">
+      <h4 class="titulo">Academic Score</h4>
+      <%= render 'universities/academicscore' %>
+
+      <h4 class="titulo">Infraestructure Score</h4>
+      <%= render 'universities/infraestructurescore' %>
+
+      <h4 class="titulo">Proffesors Score</h4>
+      <%= render 'universities/professorscore' %>
+
+      <h4 class="titulo">Alumni Score</h4>
+      <%= render 'universities/alumniscore' %>
+
+
+      <h4 class="titulo">Cost Score</h4>
+      <%= render 'universities/investmentscore' %>
+
+      <h4 class="titulo">Satisfaction Score</h4>
+      <%= render 'universities/satisfactionscore' %>
+
+      <h4 class="titulo">Party Life Score</h4>
+      <%= render 'universities/partyscore' %>
+  </div>
+  </div>
+
+
+
+<div id="London" class="tabcontent">
+<div class="col-md-9">
+<div id="magic">
+<div class="row">
+  <div class="col-md-8">
+  <h4 class="titulo">Division</h4>
+    <p><%=@career.area %></p>
+    <h4 class="titulo">Description</h4>
+    <p><%= @career.description %></p>
+
+    <h4 class="titulo">Who may study this?</h4>
+    <p><%= @career.for_who %></p>
+
+<div class="row">
+  <div class="col-md-6">
+    <h4 class="titulo">Duration</h4>
+    <p><%= @career.duration %></p>
+  </div>
+  <div class="col-md-6">
+    <h4 class="titulo">Modality</h4>
+    <p><%= @career.modality %></p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <h4 class="titulo">Shift</h4>
+    <p><%= @career.shift %></p>
+  </div>
+  <div class="col-md-6">
+    <h4 class="titulo">Aprox Cost</h4>
+    <p><%= @career.aprox_cost %></p>
+  </div>
+</div>
+
+
+  </div>
+  <div class="col-md-4">
+    <h4 class="titulo">Contact</h4>
+      <h5><span class="fa fa-globe"> </span>  <%= @career.website %></h5>
+      <h5><span class="fa fa-envelope"> </span>  <%= @career.email %></h5>
+      <h5><span class="fa fa-facebook"> </span>  <%= @career.facebook %></h5>
+      <h5><span class="fa fa-twitter"> </span>  <%= @career.twitter %></h5>
+      <h5><span class="fa fa-linkedin"> </span>  <%= @career.linkedin %></h5>
+       <h5><span class="fa fa-globe"> </span>  <%= @career.blog %></h5>
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="Mexico" class="tabcontent">
+<div class="col-md-9">
+<div id="magic">
+  <%= render 'reviews' %>
+</div>
+</div>
+</div>
+
+<div id="Tokio" class="tabcontent">
+<div class="col-md-9">
+<div id="magic">
+  <%= render 'alumni' %>
+</div>
+</div>
+</div>
+
+<div id="Ny" class="tabcontent">
+<div class="col-md-9">
+<div id="magic">
+  <%= render 'accreditations' %>
+</div>
+</div>
+</div>
+
+<div id="Paris" class="tabcontent">
+<div class="col-md-9">
+<div id="magic">
+  <%= render 'current_jobs' %>
+</div>
+</div>
+</div>
+
+<div id="Chicago" class="tabcontent">
+<div class="col-md-9">
+<div id="magic">
+  <%= render 'rankings' %>
+</div>
+</div>
+</div>
+
+</div>
 
 <p>
   <strong>Name:</strong>
   <%= best_in_place_if user_signed_in?, [@university, @career], :name, :place_holder => "Click me to add content!" %>
 </p>
 
-<p>
-  <strong>Area:</strong>
-  <%= @career.area %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @career.description %>
-</p>
-
-<p>
-  <strong>For who:</strong>
-  <%= @career.for_who %>
-</p>
-
-<p>
-  <strong>Duration:</strong>
-  <%= @career.duration %>
-</p>
-
-<p>
-  <strong>Modality:</strong>
-  <%= @career.modality %>
-</p>
-
-<p>
-  <strong>Shift:</strong>
-  <%= @career.shift %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @career.email %>
-</p>
-
-<p>
-  <strong>Website:</strong>
-  <%= @career.website %>
-</p>
-
-<p>
-  <strong>Facebook:</strong>
-  <%= @career.facebook %>
-</p>
-
-<p>
-  <strong>Twitter:</strong>
-  <%= @career.twitter %>
-</p>
-
-<p>
-  <strong>Linkedin:</strong>
-  <%= @career.linkedin %>
-</p>
-
-<p>
-  <strong>Blog:</strong>
-  <%= @career.blog %>
-</p>
-
-<p>
-  <strong>Aprox cost:</strong>
-  <%= @career.aprox_cost %>
-</p>
 
 
-<%= render 'reviews' %>
 
-<%= render 'accreditations' %>
 
-<%= render 'rankings' %>
 
-<%= render 'current_jobs' %>
 
-<%= render 'alumni' %>
 
-<!--  -->
 
-<%= render 'universities/unive_score' %>
 
-<%= render 'universities/academicscore' %>
 
-<%= render 'universities/partyscore' %>
 
-<%= render 'universities/satisfactionscore' %>
 
-<%= render 'universities/infraestructurescore' %>
 
-<%= render 'universities/alumniscore' %>
-
-<%= render 'universities/admissionscore' %>
-
-<%= render 'universities/graduationscore' %>
-
-<%= render 'universities/professorscore' %>
-
-<%= render 'universities/investmentscore' %>
-
-<%= render 'universities/finantialscore' %>
 
 
 
 <%= link_to 'Edit', edit_university_career_path(@university, @career) %> |
 <%= link_to 'Back', university_path(@university) %>
+
+
+<script>
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>

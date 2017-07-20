@@ -6,6 +6,19 @@ class CareersController < ApplicationController
   # GET /careers.json
   def index
     @careers = Career.all
+
+    @unive_score = @university.unive_scores.new
+    @academic_score = @university.academic_scores.new
+    @party_score = @university.party_scores.new
+    @satisfaction_score = @university.satisfaction_scores.new
+    @infraestructure_score = @university.infraestructure_scores.new
+    @alumni_score = @university.alumni_scores.new
+    @admission_score = @university.admission_scores.new
+    @graduation_score = @university.graduation_scores.new
+    @professor_score = @university.professor_scores.new
+    @investment_score = @university.investment_scores.new
+    @finantial_score = @university.finantial_scores.new
+
   end
 
   # GET /careers/1
@@ -87,6 +100,6 @@ class CareersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def career_params
-      params.require(:career).permit(:user_id, :university_id, :name, :area, :description, :for_who, :duration, :modality, :shift, :email, :website, :facebook, :twitter, :linkedin, :blog, :aprox_cost)
+      params.require(:career).permit(:user_id, :university_id, :name, :area, :description, :for_who, :duration, :modality, :shift, :email, :website, :facebook, :twitter, :linkedin, :blog, :aprox_cost, :option)
     end
 end

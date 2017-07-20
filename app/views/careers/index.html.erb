@@ -1,57 +1,82 @@
-<p id="notice"><%= notice %></p>
+<br><div id= "banner" class="cover_home">
+  <h4 class="white"><%= @university.country.name%></h4>
+  <p class="white"><%= @university.address%></p>
+  <h1><%= @university.name%></h1>
+  <h1 class="element typed"></h1>
+</div>
 
-<h1>Listing Careers</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>University</th>
-      <th>Country</th>
-      <th>Name</th>
-      <th>Area</th>
-      <th>Description</th>
-      <th>For who</th>
-      <th>Duration</th>
-      <th>Modality</th>
-      <th>Shift</th>
-      <th>Email</th>
-      <th>Website</th>
-      <th>Facebook</th>
-      <th>Twitter</th>
-      <th>Linkedin</th>
-      <th>Blog</th>
-      <th>Aprox cost</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="row">
+<div class="col-md-12">
+  <div id="bread">
+    <ul>
+      <li class=" <%= 'active' if current_page?(university_path(@university)) %> ">
+        <%= link_to "University Info", university_path(@university) %>
+      </li>
+      <li class=" <%= 'active' if current_page?(university_careers_path(@university)) %> ">
+        <%= link_to "Careers Info", university_careers_path(@university) %>
+      </li>
+    </ul>
+  </div>
+  </div>
+</div>
 
-  <tbody>
-    <% @careers.each do |career| %>
-      <tr>
-        <td><%= career.user %></td>
-        <td><%= career.university %></td>
-        <td><%= career.name %></td>
-        <td><%= career.area %></td>
-        <td><%= career.description %></td>
-        <td><%= career.for_who %></td>
-        <td><%= career.duration %></td>
-        <td><%= career.modality %></td>
-        <td><%= career.shift %></td>
-        <td><%= career.email %></td>
-        <td><%= career.website %></td>
-        <td><%= career.facebook %></td>
-        <td><%= career.twitter %></td>
-        <td><%= career.linkedin %></td>
-        <td><%= career.blog %></td>
-        <td><%= career.aprox_cost %></td>
-        <td><%= link_to 'Show', university_career_path(@university, career) %></td>
-        <td><%= link_to 'Edit', edit_university_career_path(@university, career) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
+<div class="row">
+<div class="col-md-3">
+  <div id="magic">
+    <h4 class="titulo">U-finder Score</h4>
+    <%= render 'universities/unive_score' %>
+  </div>
+
+  <div id="magic">
+      <h4 class="titulo">Academic Score</h4>
+      <%= render 'universities/academicscore' %>
+
+      <h4 class="titulo">Infraestructure Score</h4>
+      <%= render 'universities/infraestructurescore' %>
+
+      <h4 class="titulo">Proffesors Score</h4>
+      <%= render 'universities/professorscore' %>
+
+      <h4 class="titulo">Alumni Score</h4>
+      <%= render 'universities/alumniscore' %>
+
+
+      <h4 class="titulo">Cost Score</h4>
+      <%= render 'universities/investmentscore' %>
+
+      <h4 class="titulo">Satisfaction Score</h4>
+      <%= render 'universities/satisfactionscore' %>
+
+      <h4 class="titulo">Party Life Score</h4>
+      <%= render 'universities/partyscore' %>
+  </div>
+</div>
+
+  <div class="col-md-9">
+    <div id="magic">
+      <div class="row">
+        <% @careers.each do |career| %>
+        <div class="col-md-4">
+          <%= link_to university_career_path(@university, career) do %>
+          <div id="cudrado">
+            <h3><%= career.name.truncate(40) %></h3>
+            <h4 class="titulo"><%=career.option %></h4>
+            <p><%= career.description.truncate(70)%></p>
+            <h5 class="izq"><span class="fa fa-clock-o"></span> <%= career.duration %></h5>
+            <h5 class="der"><span class="fa fa-compass"></span> <%= career.area.truncate(17) %></h5>
+          </div>
+          <% end %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
 
 <%= link_to 'New Career', new_university_career_path(@university) %>

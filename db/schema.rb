@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170718023631) do
+ActiveRecord::Schema.define(version: 20170720182600) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,6 +64,17 @@ ActiveRecord::Schema.define(version: 20170718023631) do
   add_index "alumni_scores", ["university_id"], name: "index_alumni_scores_on_university_id", using: :btree
   add_index "alumni_scores", ["user_id"], name: "index_alumni_scores_on_user_id", using: :btree
 
+  create_table "avatars", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "university_id"
+    t.string   "photo"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "avatars", ["university_id"], name: "index_avatars_on_university_id", using: :btree
+  add_index "avatars", ["user_id"], name: "index_avatars_on_user_id", using: :btree
+
   create_table "careers", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "university_id"
@@ -84,6 +95,7 @@ ActiveRecord::Schema.define(version: 20170718023631) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.string   "slug"
+    t.string   "option"
   end
 
   add_index "careers", ["slug"], name: "index_careers_on_slug", unique: true, using: :btree
@@ -324,6 +336,8 @@ ActiveRecord::Schema.define(version: 20170718023631) do
   add_foreign_key "admission_scores", "users"
   add_foreign_key "alumni_scores", "universities"
   add_foreign_key "alumni_scores", "users"
+  add_foreign_key "avatars", "universities"
+  add_foreign_key "avatars", "users"
   add_foreign_key "careers", "universities"
   add_foreign_key "careers", "users"
   add_foreign_key "current_jobs", "careers"
