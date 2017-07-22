@@ -197,14 +197,268 @@ return false">
       <% else %>
       <h5><span class="fa fa-bell"></span><strike>Spiritual University</strike></h5>
       <% end %>
-    </div>
 
+      <% if @university.gym == true %>
+      <h5><span class="fa fa-bell"></span>Gym</h5>
+      <% else %>
+      <h5><span class="fa fa-bell"></span><strike>Gym</strike></h5>
+      <% end %>
+
+      <% if @university.pool == true %>
+      <h5><span class="fa fa-bell"></span>Swimming Pool</h5>
+      <% else %>
+      <h5><span class="fa fa-bell"></span><strike>Swmimming Pool</strike></h5>
+      <% end %>
+
+      <% if @university.residence == true %>
+      <h5><span class="fa fa-bell"></span>Student's residence</h5>
+      <% else %>
+      <h5><span class="fa fa-bell"></span><strike>Student's residence</strike></h5>
+      <% end %>
+
+      <% if @university.location == true %>
+      <h5><span class="fa fa-bell"></span>Good Location</h5>
+      <% else %>
+      <h5><span class="fa fa-bell"></span><strike>Good Location</strike></h5>
+      <% end %>
+
+      <% if @university.luch == true %>
+      <h5><span class="fa fa-bell"></span>Places for lunch</h5>
+      <% else %>
+      <h5><span class="fa fa-bell"></span><strike>Places for lunch</strike></h5>
+      <% end %>
+    </div>
+<!--  -->
     <div id="magic">
       <h4 class="titulo">Sports</h4>
-    </div>
 
+      <% if @university.football == true %>
+      <h5><span class=""></span>Football</h5>
+      <% else %>
+      <h5><span class=""></span><strike>Football</strike></h5>
+      <% end %>
+
+      <% if @university.volley == true %>
+      <h5><span class=""></span>Volleyball</h5>
+      <% else %>
+      <h5><span class=""></span><strike>Volleyball</strike></h5>
+      <% end %>
+
+      <% if @university.soccer == true %>
+      <h5><span class=""></span>Soccer</h5>
+      <% else %>
+      <h5><span class=""></span><strike>Soccer</strike></h5>
+      <% end %>
+
+      <% if @university.tennis == true %>
+      <h5><span class=""></span>Tennis</h5>
+      <% else %>
+      <h5><span class=""></span><strike>Tennis</strike></h5>
+      <% end %>
+
+      <% if @university.table_tennis == true %>
+      <h5><span class=""></span>Table Tennis</h5>
+      <% else %>
+      <h5><span class=""></span><strike>Table Tennis</strike></h5>
+      <% end %>
+
+      <% if @university.baseball == true %>
+      <h5><span class=""></span>Baseball</h5>
+      <% else %>
+      <h5><span class=""></span><strike>Baseball</strike></h5>
+      <% end %>
+
+      <% if @university.track_and_field == true %>
+      <h5><span class=""></span>Track and Field</h5>
+      <% else %>
+      <h5><span class=""></span><strike>Track and Field</strike></h5>
+      <% end %>
+
+      <% if @university.golf == true %>
+      <h5><span class=""></span>Golf</h5>
+      <% else %>
+      <h5><span class=""></span><strike>Golf</strike></h5>
+      <% end %>
+
+      <% if @university.swimming == true %>
+      <h5><span class=""></span>Swimming</h5>
+      <% else %>
+      <h5><span class=""></span><strike>Swimming</strike></h5>
+      <% end %>
+
+      <% if @university.rugby == true %>
+      <h5><span class=""></span>Rugby</h5>
+      <% else %>
+      <h5><span class=""></span><strike>Rugby</strike></h5>
+      <% end %>
+
+      <% if @university.climbing == true %>
+      <h5><span class=""></span>Climbing</h5>
+      <% else %>
+      <h5><span class=""></span><strike>Climbing</strike></h5>
+      <% end %>
+
+      <% if @university.lacrosse == true %>
+      <h5><span class=""></span>Lacrosse</h5>
+      <% else %>
+      <h5><span class=""></span><strike>Lacrosse</strike></h5>
+      <% end %>
+
+    </div>
+<!--  -->
     <div id="magic">
       <h4 class="titulo">Cultural Activities</h4>
+
+      <% if @university.drawing == true %>
+      <h5><span class=""></span>Drawing and Painting</h5>
+      <% else %>
+      <h5><span class=""></span><strike>Drawing and Painting</strike></h5>
+      <% end %>
+
+      <% if @university.photography == true %>
+      <h5><span class=""></span>Photography</h5>
+      <% else %>
+      <h5><span class=""></span><strike>Photography</strike></h5>
+      <% end %>
+
+      <% if @university.sculpture == true %>
+      <h5><span class=""></span>Sculpture</h5>
+      <% else %>
+      <h5><span class=""></span><strike>Sculpture</strike></h5>
+      <% end %>
+
+      <% if @university.theatre == true %>
+      <h5><span class=""></span>Theatre</h5>
+      <% else %>
+      <h5><span class=""></span><strike>Theatre</strike></h5>
+      <% end %>
+
+      <% if @university.wood == true %>
+      <h5><span class=""></span>Wood Working</h5>
+      <% else %>
+      <h5><span class=""></span><strike>Wood Working</strike></h5>
+      <% end %>
+
+      <% if @university.music == true %>
+      <h5><span class=""></span>Music</h5>
+      <% else %>
+      <h5><span class=""></span><strike>Music</strike></h5>
+      <% end %>
+
+      <% if @university.choir == true %>
+      <h5><span class=""></span>Choir</h5>
+      <% else %>
+      <h5><span class=""></span><strike>Choir</strike></h5>
+      <% end %>
+
+      <% if @university.marching_band == true %>
+      <h5><span class=""></span>Marching Band</h5>
+      <% else %>
+      <h5><span class=""></span><strike>Marching Band</strike></h5>
+      <% end %>
+
+      <% if @university.dance == true %>
+      <h5><span class=""></span>Dance</h5>
+      <% else %>
+      <h5><span class=""></span><strike>Dance</strike></h5>
+      <% end %>
+
+      <% if @university.mun == true %>
+      <h5><span class=""></span>Model United Nations</h5>
+      <% else %>
+      <h5><span class=""></span><strike>Model United Nations</strike></h5>
+      <% end %>
+
+      <% if @university.volunteer == true %>
+      <h5><span class=""></span>Volunteer Programs</h5>
+      <% else %>
+      <h5><span class=""></span><strike>Volunteer Programs</strike></h5>
+      <% end %>
+
+      <% if @university.gamers == true %>
+      <h5><span class=""></span>Gamers Club</h5>
+      <% else %>
+      <h5><span class=""></span><strike>Gamers Club</strike></h5>
+      <% end %>
+
+    </div>
+
+
+    <div id="magic">
+      <h4 class="titulo">Language teaching</h4>
+
+      <% if @university.english == true %>
+      <h5><span class=""></span>English</h5>
+      <% else %>
+      <h5><span class=""></span><strike>English</strike></h5>
+      <% end %>
+
+      <% if @university.spanish == true %>
+      <h5><span class=""></span>Spanish</h5>
+      <% else %>
+      <h5><span class=""></span><strike>Spanish</strike></h5>
+      <% end %>
+
+      <% if @university.french == true %>
+      <h5><span class=""></span>French</h5>
+      <% else %>
+      <h5><span class=""></span><strike>French</strike></h5>
+      <% end %>
+
+      <% if @university.german == true %>
+      <h5><span class=""></span>German</h5>
+      <% else %>
+      <h5><span class=""></span><strike>German</strike></h5>
+      <% end %>
+
+      <% if @university.chinese == true %>
+      <h5><span class=""></span>Chinese</h5>
+      <% else %>
+      <h5><span class=""></span><strike>Chinese</strike></h5>
+      <% end %>
+
+      <% if @university.italian == true %>
+      <h5><span class=""></span>Italian</h5>
+      <% else %>
+      <h5><span class=""></span><strike>Italian</strike></h5>
+      <% end %>
+
+      <% if @university.portuguese == true %>
+      <h5><span class=""></span>Portuguese</h5>
+      <% else %>
+      <h5><span class=""></span><strike>Portuguese</strike></h5>
+      <% end %>
+
+      <% if @university.russian == true %>
+      <h5><span class=""></span>Russian</h5>
+      <% else %>
+      <h5><span class=""></span><strike>Russian</strike></h5>
+      <% end %>
+
+      <% if @university.japanese == true %>
+      <h5><span class=""></span>Japanese</h5>
+      <% else %>
+      <h5><span class=""></span><strike>Japanese</strike></h5>
+      <% end %>
+
+      <% if @university.latin == true %>
+      <h5><span class=""></span>Latin</h5>
+      <% else %>
+      <h5><span class=""></span><strike>Latin</strike></h5>
+      <% end %>
+
+      <% if @university.greek == true %>
+      <h5><span class=""></span>Greek</h5>
+      <% else %>
+      <h5><span class=""></span><strike>Greek</strike></h5>
+      <% end %>
+
+      <% if @university.signs == true %>
+      <h5><span class=""></span>Sign Language</h5>
+      <% else %>
+      <h5><span class=""></span><strike>Sign Language</strike></h5>
+      <% end %>
+
     </div>
 
     <div class="visible-sm visible-xs">

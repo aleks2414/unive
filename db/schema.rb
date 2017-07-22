@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170722002422) do
+ActiveRecord::Schema.define(version: 20170722130809) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -323,9 +323,50 @@ ActiveRecord::Schema.define(version: 20170722002422) do
     t.string   "sports"
     t.string   "cutural"
     t.string   "languages"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
     t.string   "slug"
+    t.boolean  "gym",                 default: false
+    t.boolean  "pool",                default: false
+    t.boolean  "residence",           default: false
+    t.boolean  "location",            default: false
+    t.boolean  "luch",                default: false
+    t.boolean  "football",            default: false
+    t.boolean  "soccer",              default: false
+    t.boolean  "volley",              default: false
+    t.boolean  "tennis",              default: false
+    t.boolean  "table_tennis",        default: false
+    t.boolean  "baseball",            default: false
+    t.boolean  "track_and_field",     default: false
+    t.boolean  "golf",                default: false
+    t.boolean  "swimming",            default: false
+    t.boolean  "rugby",               default: false
+    t.boolean  "climbing",            default: false
+    t.boolean  "lacrosse",            default: false
+    t.boolean  "drawing",             default: false
+    t.boolean  "photography",         default: false
+    t.boolean  "sculpture",           default: false
+    t.boolean  "theatre",             default: false
+    t.boolean  "wood",                default: false
+    t.boolean  "music",               default: false
+    t.boolean  "choir",               default: false
+    t.boolean  "marching_band",       default: false
+    t.boolean  "dance",               default: false
+    t.boolean  "mun",                 default: false
+    t.boolean  "volunteer",           default: false
+    t.boolean  "gamers",              default: false
+    t.boolean  "english",             default: false
+    t.boolean  "spanish",             default: false
+    t.boolean  "french",              default: false
+    t.boolean  "german",              default: false
+    t.boolean  "chinese",             default: false
+    t.boolean  "italian",             default: false
+    t.boolean  "portuguese",          default: false
+    t.boolean  "russian",             default: false
+    t.boolean  "japanese",            default: false
+    t.boolean  "latin",               default: false
+    t.boolean  "greek",               default: false
+    t.boolean  "signs",               default: false
   end
 
   add_index "universities", ["country_id"], name: "index_universities_on_country_id", using: :btree

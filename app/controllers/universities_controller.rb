@@ -113,6 +113,6 @@ class UniversitiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def university_params
-      params.require(:university).permit(:user_id, :country_id, :option, :private_or_public, :name, :description, :fundation, :rector, :email, :facebook, :twitter, :linkedin, :website, :link_admission, :address, :longitude, :latitude, :logo, :many_proffesors, :many_students, :is_wifi, :is_cafe, :is_safe, :is_libray, :is_job_help, :is_student_exchange, :is_spiritual, :sports, :cutural, :languages)
+      params.require(:university).permit(:user_id, :country_id, :option, :private_or_public, :name, :description, :fundation, :rector, :email, :facebook, :twitter, :linkedin, :website, :link_admission, :address, :longitude, :latitude, :logo, :many_proffesors, :many_students, :is_wifi, :is_cafe, :is_safe, :is_libray, :is_job_help, :is_student_exchange, :is_spiritual, :gym, :pool, :residence, :location, :lunch, :football, :soccer, :volley, :tennis, :table_tennis, :baseball, :track_and_field, :golf, :swimming, :rugby, :climbing, :lacrosse, :drawing, :photography, :sculpture, :theatre, :wood, :music, :choir, :marching_band, :dance, :mun, :volunteer, :gamers, :english, :spanish, :french, :german, :chinese, :italian, :portuguese, :russian, :japanese, :latin, :greek, :signs)
     end
 end
