@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   
   resources :universities do
     resources :uploads
+    resources :photos
     resources :unive_scores
     resources :academic_scores
     resources :party_scores

@@ -14,6 +14,7 @@ has_many :investment_scores
 has_many :finantial_scores
 has_many :careers
 has_many :uploads
+has_many :photos
 
 
 has_many :reviews

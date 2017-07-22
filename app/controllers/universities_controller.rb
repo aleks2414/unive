@@ -36,6 +36,7 @@ class UniversitiesController < ApplicationController
   # GET /universities/1.json
   def show
     @upload = @university.uploads.new
+    @photo = @university.photos.new
     @unive_score = @university.unive_scores.new
     @academic_score = @university.academic_scores.new
     @party_score = @university.party_scores.new
@@ -50,6 +51,7 @@ class UniversitiesController < ApplicationController
 
     @careers = @university.careers
     @uploads = @university.uploads
+    @photos = @university.photos
   end
 
   # GET /universities/new

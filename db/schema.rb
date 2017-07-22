@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170721224318) do
+ActiveRecord::Schema.define(version: 20170722002422) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -218,6 +218,18 @@ ActiveRecord::Schema.define(version: 20170721224318) do
   add_index "party_scores", ["university_id"], name: "index_party_scores_on_university_id", using: :btree
   add_index "party_scores", ["user_id"], name: "index_party_scores_on_user_id", using: :btree
 
+  create_table "photos", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "university_id"
+    t.string   "image"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.string   "image2"
+  end
+
+  add_index "photos", ["university_id"], name: "index_photos_on_university_id", using: :btree
+  add_index "photos", ["user_id"], name: "index_photos_on_user_id", using: :btree
+
   create_table "professor_scores", force: :cascade do |t|
     t.float    "professor_score", default: 3.0
     t.integer  "university_id"
@@ -380,6 +392,8 @@ ActiveRecord::Schema.define(version: 20170721224318) do
   add_foreign_key "investment_scores", "users"
   add_foreign_key "party_scores", "universities"
   add_foreign_key "party_scores", "users"
+  add_foreign_key "photos", "universities"
+  add_foreign_key "photos", "users"
   add_foreign_key "professor_scores", "universities"
   add_foreign_key "professor_scores", "users"
   add_foreign_key "rankings", "careers"

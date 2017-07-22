@@ -18,6 +18,8 @@ class CareersController < ApplicationController
     @professor_score = @university.professor_scores.new
     @investment_score = @university.investment_scores.new
     @finantial_score = @university.finantial_scores.new
+  @upload = @university.uploads.new
+  @uploads = @university.uploads
 
   end
 

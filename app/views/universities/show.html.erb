@@ -27,6 +27,7 @@
 <div class="row">
   <div class="col-md-3">
   <div id="magic">
+  <h4 class="titulo">U-logo</h4>
     <%= render 'avatar' %>
   </div>
     <div id="magic">
@@ -76,6 +77,7 @@
 
     <div id="magic">
       <h4 class="titulo">Gallery</h4>
+      <%= render 'galle' %>
     </div>
   </div>
   <div class="col-md-3">
@@ -223,35 +225,9 @@ return false">
 </p>
 
 
-<p>
-  <strong>Logo:</strong>
-  <%= @university.logo %>
-</p>
-
-<p>
-  <strong>Many proffesors:</strong>
-  <%= @university.many_proffesors %>
-</p>
-
-<p>
-  <strong>Many students:</strong>
-  <%= @university.many_students %>
-</p>
-
-
-<p>
-  <strong>Languages:</strong>
-  <%= @university.languages %>
-</p>
 
 
 <!--  -->
-
-<%= render 'careers' %>
-
-
-<%= link_to 'Edit', edit_university_path(@university) %> |
-<%= link_to 'Back', universities_path %>
 
 
 <script>
