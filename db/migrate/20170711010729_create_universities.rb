@@ -21,13 +21,13 @@ class CreateUniversities < ActiveRecord::Migration
       t.string :logo
       t.string :many_proffesors
       t.string :many_students
-      t.boolean :is_wifi
-      t.boolean :is_cafe
-      t.boolean :is_safe
-      t.boolean :is_libray
-      t.boolean :is_job_help
-      t.boolean :is_student_exchange
-      t.boolean :is_spiritual
+      t.boolean :is_wifi, default: false
+      t.boolean :is_cafe, default: false
+      t.boolean :is_safe, default: false
+      t.boolean :is_libray, default: false
+      t.boolean :is_job_help, default: false
+      t.boolean :is_student_exchange, default: false
+      t.boolean :is_spiritual, default: false
       t.string :sports
       t.string :cutural
       t.string :languages

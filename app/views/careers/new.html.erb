@@ -1,5 +1,44 @@
+<div class="container">
+<div class="col-md-8 col-md-offset-2">
+  <div id="formario">
+
 <h1>New Career</h1>
 
-<%= render 'form' %>
+<%= form_for [@university, @career] do |f| %>
+  <% if @career.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@career.errors.count, "error") %> prohibited this career from being saved:</h2>
 
-<%= link_to 'Back', careers_path %>
+      <ul>
+      <% @career.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :option %><br>
+    <%= f.select :option, [["Graduate"], ["Undergraduate"], ["Specialist"], ["Doctoral"], ["Master"]]%>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :area %><br>
+    <%= f.select :area, [["Agricultural"], ["Art and Architecture"], ["Exact and Natural Sciences"], ["Social Sciences"], ["Law"], ["Human Studies"], ["Education"], ["Technology"], ["Health Studies"], ["Health Studies"], ["Administration and Trade Studies"], ["Religious Studies"]]%>
+  </div>
+  <div class="actions">
+    <%= f.submit class: "button button_red"%>
+  </div>
+  <br>
+<% end %>
+
+
+
+</div></div></div>

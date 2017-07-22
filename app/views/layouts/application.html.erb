@@ -17,8 +17,12 @@
        <li class="button button_red"> <a href="<%= destroy_user_session_path %>" data-method='delete'>
         Sign out
       </a></li>
-      <li class="button <%= 'active' if current_page?(edit_user_registration_path) %>">
+      <li class="button">
         <a href="<%= edit_user_registration_path(@user) %>">My profile</a>
+      </li>
+
+      <li class="button">
+        <a href="<%= new_university_path %>">New University</a>
       </li>
 
       <% else %>
