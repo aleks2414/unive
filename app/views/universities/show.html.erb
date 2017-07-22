@@ -205,232 +205,95 @@ return false">
     <div id="magic">
       <h4 class="titulo">Sports</h4>
 
-      <% if @university.football == true %>
-      <h5><span class=""></span>Football</h5>
-      <% else %>
-      <h5><span class=""></span><strike>Football</strike></h5>
-      <% end %>
+<h5><span class="fa fa-location-arrow"></span><%= best_in_place [@university], :football, as: :checkbox, collection: {true: "Football", false: "#{'<span class= "strike">Football</span>'}".html_safe}, :activator => "#24" %><a href="#" id="24"> <span class="grande fa fa-toggle-on"></span></a></h5>
 
-      <% if @university.volley == true %>
-      <h5><span class=""></span>Volleyball</h5>
-      <% else %>
-      <h5><span class=""></span><strike>Volleyball</strike></h5>
-      <% end %>
+<h5><span class="fa fa-location-arrow"></span><%= best_in_place [@university], :soccer, as: :checkbox, collection: {true: "Soccer", false: "#{'<span class= "strike">Soccer</span>'}".html_safe}, :activator => "#25" %><a href="#" id="25"> <span class="grande fa fa-toggle-on"></span></a></h5>
 
-      <% if @university.soccer == true %>
-      <h5><span class=""></span>Soccer</h5>
-      <% else %>
-      <h5><span class=""></span><strike>Soccer</strike></h5>
-      <% end %>
+<h5><span class="fa fa-location-arrow"></span><%= best_in_place [@university], :volley, as: :checkbox, collection: {true: "Volleyball", false: "#{'<span class= "strike">Volleyball</span>'}".html_safe}, :activator => "#26" %><a href="#" id="26"> <span class="grande fa fa-toggle-on"></span></a></h5>
 
-      <% if @university.tennis == true %>
-      <h5><span class=""></span>Tennis</h5>
-      <% else %>
-      <h5><span class=""></span><strike>Tennis</strike></h5>
-      <% end %>
+<h5><span class="fa fa-location-arrow"></span><%= best_in_place [@university], :tennis, as: :checkbox, collection: {true: "Tennis", false: "#{'<span class= "strike">Tennis</span>'}".html_safe}, :activator => "#27" %><a href="#" id="27"> <span class="grande fa fa-toggle-on"></span></a></h5>
 
-      <% if @university.table_tennis == true %>
-      <h5><span class=""></span>Table Tennis</h5>
-      <% else %>
-      <h5><span class=""></span><strike>Table Tennis</strike></h5>
-      <% end %>
+<h5><span class="fa fa-location-arrow"></span><%= best_in_place [@university], :table_tennis, as: :checkbox, collection: {true: "Table Tennis", false: "#{'<span class= "strike">Table Tennis</span>'}".html_safe}, :activator => "#28" %><a href="#" id="28"> <span class="grande fa fa-toggle-on"></span></a></h5>
 
-      <% if @university.baseball == true %>
-      <h5><span class=""></span>Baseball</h5>
-      <% else %>
-      <h5><span class=""></span><strike>Baseball</strike></h5>
-      <% end %>
+<h5><span class="fa fa-location-arrow"></span><%= best_in_place [@university], :baseball, as: :checkbox, collection: {true: "Baseball", false: "#{'<span class= "strike">Baseball</span>'}".html_safe}, :activator => "#29" %><a href="#" id="29"> <span class="grande fa fa-toggle-on"></span></a></h5>
 
-      <% if @university.track_and_field == true %>
-      <h5><span class=""></span>Track and Field</h5>
-      <% else %>
-      <h5><span class=""></span><strike>Track and Field</strike></h5>
-      <% end %>
+<h5><span class="fa fa-location-arrow"></span><%= best_in_place [@university], :track_and_field, as: :checkbox, collection: {true: "Track and Field", false: "#{'<span class= "strike">Track and Field</span>'}".html_safe}, :activator => "#30" %><a href="#" id="30"> <span class="grande fa fa-toggle-on"></span></a></h5>
 
-      <% if @university.golf == true %>
-      <h5><span class=""></span>Golf</h5>
-      <% else %>
-      <h5><span class=""></span><strike>Golf</strike></h5>
-      <% end %>
+<h5><span class="fa fa-location-arrow"></span><%= best_in_place [@university], :golf, as: :checkbox, collection: {true: "Golf", false: "#{'<span class= "strike">Golf</span>'}".html_safe}, :activator => "#31" %><a href="#" id="31"> <span class="grande fa fa-toggle-on"></span></a></h5>
 
-      <% if @university.swimming == true %>
-      <h5><span class=""></span>Swimming</h5>
-      <% else %>
-      <h5><span class=""></span><strike>Swimming</strike></h5>
-      <% end %>
+<h5><span class="fa fa-location-arrow"></span><%= best_in_place [@university], :swimming, as: :checkbox, collection: {true: "Swimming", false: "#{'<span class= "strike">Swimming</span>'}".html_safe}, :activator => "#32" %><a href="#" id="32"> <span class="grande fa fa-toggle-on"></span></a></h5>
 
-      <% if @university.rugby == true %>
-      <h5><span class=""></span>Rugby</h5>
-      <% else %>
-      <h5><span class=""></span><strike>Rugby</strike></h5>
-      <% end %>
+<h5><span class="fa fa-location-arrow"></span><%= best_in_place [@university], :rugby, as: :checkbox, collection: {true: "Rugby", false: "#{'<span class= "strike">Rugby</span>'}".html_safe}, :activator => "#33" %><a href="#" id="33"> <span class="grande fa fa-toggle-on"></span></a></h5>
 
-      <% if @university.climbing == true %>
-      <h5><span class=""></span>Climbing</h5>
-      <% else %>
-      <h5><span class=""></span><strike>Climbing</strike></h5>
-      <% end %>
+<h5><span class="fa fa-location-arrow"></span><%= best_in_place [@university], :climbing, as: :checkbox, collection: {true: "Climbing", false: "#{'<span class= "strike">Climbing</span>'}".html_safe}, :activator => "#34" %><a href="#" id="34"> <span class="grande fa fa-toggle-on"></span></a></h5>
 
-      <% if @university.lacrosse == true %>
-      <h5><span class=""></span>Lacrosse</h5>
-      <% else %>
-      <h5><span class=""></span><strike>Lacrosse</strike></h5>
-      <% end %>
+<h5><span class="fa fa-location-arrow"></span><%= best_in_place [@university], :lacrosse, as: :checkbox, collection: {true: "Lacrosse", false: "#{'<span class= "strike">Lacrosse</span>'}".html_safe}, :activator => "#35" %><a href="#" id="35"> <span class="grande fa fa-toggle-on"></span></a></h5>
+
+
+
+
+      
 
     </div>
 <!--  -->
     <div id="magic">
       <h4 class="titulo">Cultural Activities</h4>
 
-      <% if @university.drawing == true %>
-      <h5><span class=""></span>Drawing and Painting</h5>
-      <% else %>
-      <h5><span class=""></span><strike>Drawing and Painting</strike></h5>
-      <% end %>
+<h5><span class="fa fa-bookmark"></span><%= best_in_place [@university], :drawing, as: :checkbox, collection: {true: "Lacrosse", false: "#{'<span class= "strike">Lacrosse</span>'}".html_safe}, :activator => "#36" %><a href="#" id="36"> <span class="grande fa fa-toggle-on"></span></a></h5>
 
-      <% if @university.photography == true %>
-      <h5><span class=""></span>Photography</h5>
-      <% else %>
-      <h5><span class=""></span><strike>Photography</strike></h5>
-      <% end %>
+<h5><span class="fa fa-bookmark"></span><%= best_in_place [@university], :photography, as: :checkbox, collection: {true: "Photography", false: "#{'<span class= "strike">Photography</span>'}".html_safe}, :activator => "#37" %><a href="#" id="37"> <span class="grande fa fa-toggle-on"></span></a></h5>
 
-      <% if @university.sculpture == true %>
-      <h5><span class=""></span>Sculpture</h5>
-      <% else %>
-      <h5><span class=""></span><strike>Sculpture</strike></h5>
-      <% end %>
+<h5><span class="fa fa-bookmark"></span><%= best_in_place [@university], :sculpture, as: :checkbox, collection: {true: "Sculpture", false: "#{'<span class= "strike">Sculpture</span>'}".html_safe}, :activator => "#38" %><a href="#" id="38"> <span class="grande fa fa-toggle-on"></span></a></h5>
 
-      <% if @university.theatre == true %>
-      <h5><span class=""></span>Theatre</h5>
-      <% else %>
-      <h5><span class=""></span><strike>Theatre</strike></h5>
-      <% end %>
+<h5><span class="fa fa-bookmark"></span><%= best_in_place [@university], :theatre, as: :checkbox, collection: {true: "Theatre", false: "#{'<span class= "strike">Theatre</span>'}".html_safe}, :activator => "#39" %><a href="#" id="39"> <span class="grande fa fa-toggle-on"></span></a></h5>
 
-      <% if @university.wood == true %>
-      <h5><span class=""></span>Wood Working</h5>
-      <% else %>
-      <h5><span class=""></span><strike>Wood Working</strike></h5>
-      <% end %>
+<h5><span class="fa fa-bookmark"></span><%= best_in_place [@university], :wood, as: :checkbox, collection: {true: "Wood Working", false: "#{'<span class= "strike">Wood Working</span>'}".html_safe}, :activator => "#40" %><a href="#" id="40"> <span class="grande fa fa-toggle-on"></span></a></h5>
 
-      <% if @university.music == true %>
-      <h5><span class=""></span>Music</h5>
-      <% else %>
-      <h5><span class=""></span><strike>Music</strike></h5>
-      <% end %>
+<h5><span class="fa fa-bookmark"></span><%= best_in_place [@university], :music, as: :checkbox, collection: {true: "Music", false: "#{'<span class= "strike">Music</span>'}".html_safe}, :activator => "#41" %><a href="#" id="41"> <span class="grande fa fa-toggle-on"></span></a></h5>
 
-      <% if @university.choir == true %>
-      <h5><span class=""></span>Choir</h5>
-      <% else %>
-      <h5><span class=""></span><strike>Choir</strike></h5>
-      <% end %>
+<h5><span class="fa fa-bookmark"></span><%= best_in_place [@university], :choir, as: :checkbox, collection: {true: "Choir", false: "#{'<span class= "strike">Choir</span>'}".html_safe}, :activator => "#42" %><a href="#" id="42"> <span class="grande fa fa-toggle-on"></span></a></h5>
 
-      <% if @university.marching_band == true %>
-      <h5><span class=""></span>Marching Band</h5>
-      <% else %>
-      <h5><span class=""></span><strike>Marching Band</strike></h5>
-      <% end %>
+<h5><span class="fa fa-bookmark"></span><%= best_in_place [@university], :marching_band, as: :checkbox, collection: {true: "Marching Band", false: "#{'<span class= "strike">Marching Band</span>'}".html_safe}, :activator => "#43" %><a href="#" id="43"> <span class="grande fa fa-toggle-on"></span></a></h5>
 
-      <% if @university.dance == true %>
-      <h5><span class=""></span>Dance</h5>
-      <% else %>
-      <h5><span class=""></span><strike>Dance</strike></h5>
-      <% end %>
+<h5><span class="fa fa-bookmark"></span><%= best_in_place [@university], :dance, as: :checkbox, collection: {true: "Dance", false: "#{'<span class= "strike">Dance</span>'}".html_safe}, :activator => "#44" %><a href="#" id="44"> <span class="grande fa fa-toggle-on"></span></a></h5>
 
-      <% if @university.mun == true %>
-      <h5><span class=""></span>Model United Nations</h5>
-      <% else %>
-      <h5><span class=""></span><strike>Model United Nations</strike></h5>
-      <% end %>
+<h5><span class="fa fa-bookmark"></span><%= best_in_place [@university], :mun, as: :checkbox, collection: {true: "Model United Nations", false: "#{'<span class= "strike">Model United Nations</span>'}".html_safe}, :activator => "#45" %><a href="#" id="45"> <span class="grande fa fa-toggle-on"></span></a></h5>
 
-      <% if @university.volunteer == true %>
-      <h5><span class=""></span>Volunteer Programs</h5>
-      <% else %>
-      <h5><span class=""></span><strike>Volunteer Programs</strike></h5>
-      <% end %>
+<h5><span class="fa fa-bookmark"></span><%= best_in_place [@university], :volunteer, as: :checkbox, collection: {true: "Volunteer", false: "#{'<span class= "strike">Volunteer</span>'}".html_safe}, :activator => "#46" %><a href="#" id="46"> <span class="grande fa fa-toggle-on"></span></a></h5>
 
-      <% if @university.gamers == true %>
-      <h5><span class=""></span>Gamers Club</h5>
-      <% else %>
-      <h5><span class=""></span><strike>Gamers Club</strike></h5>
-      <% end %>
+<h5><span class="fa fa-bookmark"></span><%= best_in_place [@university], :gamers, as: :checkbox, collection: {true: "Gamers Club", false: "#{'<span class= "strike">Gamers Club</span>'}".html_safe}, :activator => "#47" %><a href="#" id="47"> <span class="grande fa fa-toggle-on"></span></a></h5>
+
 
     </div>
 
 
     <div id="magic">
-      <h4 class="titulo">Language teaching</h4>
+      <h4 class="titulo">Language Friendly</h4>
 
-      <% if @university.english == true %>
-      <h5><span class=""></span>English</h5>
-      <% else %>
-      <h5><span class=""></span><strike>English</strike></h5>
-      <% end %>
+<h5><span class="fa fa-language"></span><%= best_in_place [@university], :english, as: :checkbox, collection: {true: "English", false: "#{'<span class= "strike">English</span>'}".html_safe}, :activator => "#48" %><a href="#" id="48"> <span class="grande fa fa-toggle-on"></span></a></h5>
 
-      <% if @university.spanish == true %>
-      <h5><span class=""></span>Spanish</h5>
-      <% else %>
-      <h5><span class=""></span><strike>Spanish</strike></h5>
-      <% end %>
+<h5><span class="fa fa-language"></span><%= best_in_place [@university], :spanish, as: :checkbox, collection: {true: "Spanish", false: "#{'<span class= "strike">Spanish</span>'}".html_safe}, :activator => "#49" %><a href="#" id="49"> <span class="grande fa fa-toggle-on"></span></a></h5>
 
-      <% if @university.french == true %>
-      <h5><span class=""></span>French</h5>
-      <% else %>
-      <h5><span class=""></span><strike>French</strike></h5>
-      <% end %>
+<h5><span class="fa fa-language"></span><%= best_in_place [@university], :french, as: :checkbox, collection: {true: "French", false: "#{'<span class= "strike">French</span>'}".html_safe}, :activator => "#50" %><a href="#" id="50"> <span class="grande fa fa-toggle-on"></span></a></h5>
 
-      <% if @university.german == true %>
-      <h5><span class=""></span>German</h5>
-      <% else %>
-      <h5><span class=""></span><strike>German</strike></h5>
-      <% end %>
+<h5><span class="fa fa-language"></span><%= best_in_place [@university], :german, as: :checkbox, collection: {true: "German", false: "#{'<span class= "strike">German</span>'}".html_safe}, :activator => "#51" %><a href="#" id="51"> <span class="grande fa fa-toggle-on"></span></a></h5>
 
-      <% if @university.chinese == true %>
-      <h5><span class=""></span>Chinese</h5>
-      <% else %>
-      <h5><span class=""></span><strike>Chinese</strike></h5>
-      <% end %>
+<h5><span class="fa fa-language"></span><%= best_in_place [@university], :chinese, as: :checkbox, collection: {true: "Chinese", false: "#{'<span class= "strike">Chinese</span>'}".html_safe}, :activator => "#52" %><a href="#" id="52"> <span class="grande fa fa-toggle-on"></span></a></h5>
 
-      <% if @university.italian == true %>
-      <h5><span class=""></span>Italian</h5>
-      <% else %>
-      <h5><span class=""></span><strike>Italian</strike></h5>
-      <% end %>
+<h5><span class="fa fa-language"></span><%= best_in_place [@university], :italian, as: :checkbox, collection: {true: "Italian", false: "#{'<span class= "strike">Italian</span>'}".html_safe}, :activator => "#53" %><a href="#" id="53"> <span class="grande fa fa-toggle-on"></span></a></h5>
 
-      <% if @university.portuguese == true %>
-      <h5><span class=""></span>Portuguese</h5>
-      <% else %>
-      <h5><span class=""></span><strike>Portuguese</strike></h5>
-      <% end %>
+<h5><span class="fa fa-language"></span><%= best_in_place [@university], :portuguese, as: :checkbox, collection: {true: "Portuguese", false: "#{'<span class= "strike">Portuguese</span>'}".html_safe}, :activator => "#54" %><a href="#" id="54"> <span class="grande fa fa-toggle-on"></span></a></h5>
 
-      <% if @university.russian == true %>
-      <h5><span class=""></span>Russian</h5>
-      <% else %>
-      <h5><span class=""></span><strike>Russian</strike></h5>
-      <% end %>
+<h5><span class="fa fa-language"></span><%= best_in_place [@university], :russian, as: :checkbox, collection: {true: "Russian", false: "#{'<span class= "strike">Russian</span>'}".html_safe}, :activator => "#55" %><a href="#" id="55"> <span class="grande fa fa-toggle-on"></span></a></h5>
 
-      <% if @university.japanese == true %>
-      <h5><span class=""></span>Japanese</h5>
-      <% else %>
-      <h5><span class=""></span><strike>Japanese</strike></h5>
-      <% end %>
+<h5><span class="fa fa-language"></span><%= best_in_place [@university], :japanese, as: :checkbox, collection: {true: "Japanese", false: "#{'<span class= "strike">Japanese</span>'}".html_safe}, :activator => "#56" %><a href="#" id="56"> <span class="grande fa fa-toggle-on"></span></a></h5>
 
-      <% if @university.latin == true %>
-      <h5><span class=""></span>Latin</h5>
-      <% else %>
-      <h5><span class=""></span><strike>Latin</strike></h5>
-      <% end %>
+<h5><span class="fa fa-language"></span><%= best_in_place [@university], :latin, as: :checkbox, collection: {true: "Latin", false: "#{'<span class= "strike">Latin</span>'}".html_safe}, :activator => "#57" %><a href="#" id="57"> <span class="grande fa fa-toggle-on"></span></a></h5>
 
-      <% if @university.greek == true %>
-      <h5><span class=""></span>Greek</h5>
-      <% else %>
-      <h5><span class=""></span><strike>Greek</strike></h5>
-      <% end %>
+<h5><span class="fa fa-language"></span><%= best_in_place [@university], :greek, as: :checkbox, collection: {true: "Greek", false: "#{'<span class= "strike">Greek</span>'}".html_safe}, :activator => "#58" %><a href="#" id="58"> <span class="grande fa fa-toggle-on"></span></a></h5>
 
-      <% if @university.signs == true %>
-      <h5><span class=""></span>Sign Language</h5>
-      <% else %>
-      <h5><span class=""></span><strike>Sign Language</strike></h5>
-      <% end %>
+<h5><span class="fa fa-language"></span><%= best_in_place [@university], :signs, as: :checkbox, collection: {true: "Signs Language", false: "#{'<span class= "strike">Signs Language</span>'}".html_safe}, :activator => "#59" %><a href="#" id="59"> <span class="grande fa fa-toggle-on"></span></a></h5>
+      
 
     </div>
 
