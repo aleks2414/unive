@@ -184,7 +184,7 @@ input[type="search"], select {
 
 .botones {
   transition: background-color .15s linear;
-  font-size: 15px;
+  font-size: 12px;
   font-family: 'Gotham_bold', sans-serif !important;
   border-radius: 2px;
   padding: 5px;
@@ -249,6 +249,12 @@ input[type="search"], select {
     height: 41px;
     padding-top: 10px;
     color: #4f4f4f;
+    a {
+      color: $blue;
+      span {
+        font-size: 21px;
+      }
+    }
   }
 
   @media (max-width: 800px)
@@ -299,7 +305,7 @@ background-attachment: unset;
 
 .cover_home {
   background-image: image-url("innova_cover.jpg");
-  height: 35vh;
+  height: 40vh;
 }
 
 .modal-content {
@@ -439,6 +445,23 @@ background-attachment: unset;
   }
 }
 
+.vote {
+  margin: 5px;
+  background-color: $blue;
+  border: solid 2px white;
+  &:hover   {
+    color:$blue;
+    background-color: white;
+    border: solid 2px $blue;
+    span {
+      color: $blue;
+    }
+  }
+  span {
+    color: white;
+  }
+}
+
 #circle {
   .avatar {
   text-align: center;
@@ -490,3 +513,8 @@ input[type="date"],input[type="name"], input[type="email"], input[type="textbox"
   font-family: 'Gotham_bold', sans-serif !important;
 }
 }
+
+.strike {
+  text-decoration: line-through
+}
+

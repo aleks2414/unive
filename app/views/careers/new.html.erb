@@ -19,19 +19,19 @@
 
   <div class="field">
     <%= f.label :option %><br>
-    <%= f.select :option, [["Graduate"], ["Undergraduate"], ["Specialist"], ["Doctoral"], ["Master"]]%>
+    <%= f.select :option, [["Graduate"], ["Undergraduate"], ["Specialist"], ["Doctoral"], ["Master"]], required: true%>
   </div>
 
 
   <div class="field">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, required: true %>
   </div>
 
 
   <div class="field">
     <%= f.label :area %><br>
-    <%= f.select :area, [["Agricultural"], ["Art and Architecture"], ["Exact and Natural Sciences"], ["Social Sciences"], ["Law"], ["Human Studies"], ["Education"], ["Technology"], ["Health Studies"], ["Health Studies"], ["Administration and Trade Studies"], ["Religious Studies"]]%>
+    <%= f.select :area, [["Agricultural"], ["Art and Architecture"], ["Exact and Natural Sciences"], ["Social Sciences"], ["Law"], ["Human Studies"], ["Education"], ["Technology"], ["Health Studies"], ["Health Studies"], ["Administration and Trade Studies"], ["Religious Studies"]], required: true%>
   </div>
   <div class="actions">
     <%= f.submit class: "button button_red"%>

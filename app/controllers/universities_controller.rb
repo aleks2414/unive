@@ -15,6 +15,11 @@ class UniversitiesController < ApplicationController
    clear_boolean(params[:q], :is_student_exchange_eq)
    clear_boolean(params[:q], :is_spiritual_eq)
    clear_boolean(params[:q], :is_safe_eq)
+   clear_boolean(params[:q], :gym_eq)
+   clear_boolean(params[:q], :pool_eq)
+   clear_boolean(params[:q], :residence_eq)
+   clear_boolean(params[:q], :location_eq)
+   clear_boolean(params[:q], :luch_eq)
  end
 
     @q = University.ransack(params[:q])

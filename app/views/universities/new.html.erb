@@ -18,12 +18,12 @@
 
 <div class="field">
   <%= f.label :Country_id %><br>
-  <%= collection_select(:university, :country_id, Country.all, :id, :name, {:prompt => 'Select Country'}) %>
+  <%= collection_select(:university, :country_id, Country.all, :id, :name, {:prompt => 'Select Country'}, required: true) %>
 </div>
 
  <div class="field">
    <%= f.label :name %><br>
-   <%= f.text_field :name %>
+   <%= f.text_field :name, required: true %>
  </div>
 
 

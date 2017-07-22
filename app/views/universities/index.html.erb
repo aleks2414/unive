@@ -10,79 +10,108 @@
   <i class="material-icons mdl-textfield__label__icon">search</i>
   </div>
   </div>
+  <hr>
 
   <div class="row">
 
-  <div class="col-md-2 col-xs-6">
+  <div class="col-md-4 col-xs-6">
   <span> <%= f.check_box :country_continent_eq, {:class => "hidden", :id => "EuropeP"}, "Europe", false %>
   <label for="EuropeP" class="botones button_red">Europe</label></span>
   </div>
 
-  <div class="col-md-2 col-xs-6">
+  <div class="col-md-4 col-xs-6">
   <span> <%= f.check_box :country_continent_eq, {:class => "hidden", :id => "AfricaP"}, "Africa", false %>
   <label for="AfricaP" class="botones button_red">Africa</label></span>
   </div>
 
-  <div class="col-md-2 col-xs-6">
+  <div class="col-md-4 col-xs-6">
   <span> <%= f.check_box :country_continent_eq, {:class => "hidden", :id => "AsiaP"}, "Asia", false %>
   <label for="AsiaP" class="botones button_red">Asia</label></span>
   </div>
 
-  <div class="col-md-2 col-xs-6">
+  <div class="col-md-4 col-xs-6">
   <span> <%= f.check_box :country_continent_eq, {:class => "hidden", :id => "North_AmericaP"}, "North America", false %>
   <label for="North_AmericaP" class="botones button_red">North America</label></span>
   </div>
 
-  <div class="col-md-2 col-xs-6">
+  <div class="col-md-4 col-xs-6">
   <span> <%= f.check_box :country_continent_eq, {:class => "hidden", :id => "South_AmericaP"}, "South America", false %>
   <label for="South_AmericaP" class="botones button_red">South America</label></span>
   </div>
 
-  <div class="col-md-2 col-xs-6">
+  <div class="col-md-4 col-xs-6">
   <span> <%= f.check_box :country_continent_eq, {:class => "hidden", :id => "OceaniaP"}, "Oceania", false %>
   <label for="OceaniaP" class="botones button_red">Oceania</label></span>
   </div>
 
   </div>
 
+<hr>
+
 <div class="row">
 
-  <div class="col-md-1 col-xs-4">
+  <div class="col-md-2 col-xs-3">
   <span> <%= f.check_box :is_wifi_eq, :value => true, :id => 'Wifi', class: "hidden" %>
   <label for="Wifi" class="botones button_red">Wifi</label></span>
   </div>
 
-  <div class="col-md-2 col-xs-4">
+  <div class="col-md-2 col-xs-3">
   <span> <%= f.check_box :is_cafe_eq, :value => true, :id => 'CafeP', class: "hidden" %>
   <label for="CafeP" class="botones button_red">Cafeteria</label></span>
   </div>
 
-  <div class="col-md-1 col-xs-4">
+  <div class="col-md-2 col-xs-3">
   <span> <%= f.check_box :is_libray_eq, :value => true, :id => 'LibrayP', class: "hidden" %>
   <label for="LibrayP" class="botones button_red">Library</label></span>
   </div>
 
-  <div class="col-md-2 col-xs-4">
+  <div class="col-md-2 col-xs-3">
+  <span> <%= f.check_box :gym_eq, :value => true, :id => 'GymP', class: "hidden" %>
+  <label for="GymP" class="botones button_red">Gym</label></span>
+  </div>
+
+  <div class="col-md-2 col-xs-3">
   <span> <%= f.check_box :is_job_help_eq, :value => true, :id => 'JobP', class: "hidden" %>
   <label for="JobP" class="botones button_red">Job Board</label></span>
   </div>
 
-  <div class="col-md-2 col-xs-4">
+  <div class="col-md-2 col-xs-3">
   <span> <%= f.check_box :is_student_exchange_eq, :value => true, :id => 'StudyP', class: "hidden" %>
   <label for="StudyP" class="botones button_red">Study Abroad</label></span>
   </div>
 
-  <div class="col-md-2 col-xs-4">
+  <div class="col-md-2 col-xs-3">
   <span> <%= f.check_box :is_safe_eq, :value => true, :id => 'SafeP', class: "hidden" %>
   <label for="SafeP" class="botones button_red">Safe Campus</label></span>
   </div>
 
-  <div class="col-md-2 col-xs-4">
+  <div class="col-md-2 col-xs-3">
+  <span> <%= f.check_box :pool_eq, :value => true, :id => 'PoolP', class: "hidden" %>
+  <label for="PoolP" class="botones button_red">Swimming Pool</label></span>
+  </div>
+
+  <div class="col-md-2 col-xs-3">
+  <span> <%= f.check_box :residence_eq, :value => true, :id => 'ResidenceP', class: "hidden" %>
+  <label for="ResidenceP" class="botones button_red">Student Residence</label></span>
+  </div>
+
+  <div class="col-md-2 col-xs-3">
+  <span> <%= f.check_box :location_eq, :value => true, :id => 'LocationP', class: "hidden" %>
+  <label for="LocationP" class="botones button_red">Good Location</label></span>
+  </div>
+
+  <div class="col-md-2 col-xs-3">
+  <span> <%= f.check_box :luch_eq, :value => true, :id => 'LunchP', class: "hidden" %>
+  <label for="LunchP" class="botones button_red">Places for Lunch</label></span>
+  </div>
+
+  <div class="col-md-2 col-xs-3">
   <span> <%= f.check_box :is_spiritual_eq, :value => true, :id => 'SpiritP', class: "hidden" %>
   <label for="SpiritP" class="botones button_red">Spiritual</label></span>
   </div>
 
 </div>
+<hr>
 
 
   <%= f.submit "search" %>

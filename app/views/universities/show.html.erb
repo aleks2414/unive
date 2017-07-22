@@ -40,31 +40,33 @@
   </div>
   <div class="col-md-6">
     <div id="magic">
-      <h4 class="titulo"><%= @university.name.truncate(50) %></h4>
+      
+      <h4 class="titulo"><%= best_in_place [@university], :name, :place_holder => "Click me to add content!", :activator => "#1" %>
+  <a href="#" id="1"> <span class="grande fa fa-pencil-square"></span></a></h4>
 
-      <p><%= @university.description %></p>
+      <p><%= best_in_place [@university], :description, :place_holder => "Click here to edit the university description", :as => :textarea %></p>
       
       <div class="row">
       <div class="col-xs-6">
-      <h4 class="titulo">Foundation date</h4>
-      <p><%= @university.fundation %></p>
+      <h4 class="titulo">Foundation date <a href="#" id="5"> <span class="grande fa fa-pencil-square"></span></a></h4>
+      <p><%= best_in_place [@university], :fundation, :place_holder => "Add the foundation date", :activator => "#5" %></p>
       </div>
       
       <div class="col-xs-6">
-      <h4 class="titulo">University rector</h4>
-      <p><%= @university.rector %></p>
+      <h4 class="titulo">University rector <a href="#" id="2"> <span class="grande fa fa-pencil-square"></span></a></h4>
+      <p><%= best_in_place [@university], :rector, :place_holder => "Add the rector's name", :activator => "#2" %></p>
       </div>
       </div>
 
       <div class="row">
       <div class="col-xs-6">
-      <h4 class="titulo"># of professors</h4>
-      <p><%= @university.many_proffesors %></p>
+      <h4 class="titulo"># of professors <a href="#" id="3"> <span class="grande fa fa-pencil-square"></span></a></h4>
+      <p><%= best_in_place [@university], :many_proffesors, :place_holder => "How many proffesors are?", :activator => "#3" %></p>
       </div>
       
       <div class="col-xs-6">
-      <h4 class="titulo"># of Students</h4>
-      <p><%= @university.many_students %></p>
+      <h4 class="titulo"># of Students <a href="#" id="4"> <span class="grande fa fa-pencil-square"></span></a></h4>
+      <p><%= best_in_place [@university], :many_students, :place_holder => "How many students are?", :activator => "#4" %></p>
       </div>
       </div>
 
@@ -143,91 +145,62 @@ return false">
   </div>
     <div id="magic">
       <h4 class="titulo">Contact</h4>
-      <h5><span class="fa fa-globe"> </span>  <%= @university.website %></h5>
-      <h5><span class="fa fa-envelope"> </span>  <%= @university.email %></h5>
-      <h5><span class="fa fa-facebook"> </span>  <%= @university.facebook %></h5>
-      <h5><span class="fa fa-twitter"> </span>  <%= @university.twitter %></h5>
-      <h5><span class="fa fa-linkedin"> </span>  <%= @university.linkedin %></h5>
+      <h5><span class="fa fa-globe"> </span><%= best_in_place [@university], :website, :place_holder => "Add website", :activator => "#6" %> <a href="#" id="6"> <span class="grande fa fa-pencil-square"></span></a></h5>
+
+      <h5><span class="fa fa-envelope"> </span><%= best_in_place [@university], :email, :place_holder => "Add an email", :activator => "#7" %> <a href="#" id="7"> <span class="grande fa fa-pencil-square"></span></a></h5>
+
+      <h5><span class="fa fa-facebook"> </span><%= best_in_place [@university], :facebook, :place_holder => "Add facebook page", :activator => "#8" %> <a href="#" id="8"> <span class="grande fa fa-pencil-square"></span></a></h5>
+
+      <h5><span class="fa fa-twitter"> </span><%= best_in_place [@university], :twitter, :place_holder => "Add twitter site", :activator => "#9" %> <a href="#" id="9"> <span class="grande fa fa-pencil-square"></span></a></h5>
+
+      <h5><span class="fa fa-linkedin"> </span><%= best_in_place [@university], :linkedin, :place_holder => "Add linked in website", :activator => "#10" %> <a href="#" id="10"> <span class="grande fa fa-pencil-square"></span></a></h5>
 
       <p></p>
       <h4 class="titulo">Admission Link</h4>
-      <h5><span class="fa fa-external-link"> </span>  <%= @university.link_admission %></h5>
+      <h5><span class="fa fa-external-link"> </span><%= best_in_place [@university], :link_admission, :place_holder => "Add Admission website", :activator => "#11" %> <a href="#" id="11"> <span class="grande fa fa-pencil-square"></span></a></h5>
     </div>
 
     <div id="magic">
       <h4 class="titulo">Amenities</h4>
-      <% if @university.is_wifi == true %>
-      <h5><span class="fa fa-wifi"></span>Wifi</h5>
-      <% else %>
-      <h5><span class="fa fa-wifi"></span><strike>Wifi</strike></h5>
-      <% end %>
+      <h5><span class="fa fa-wifi"></span><%= best_in_place [@university], :is_wifi, as: :checkbox, collection: {true: "Wifi", false: "#{'<span class= "strike">Wifi</span>'}".html_safe}, :activator => "#12" %><a href="#" id="12"> <span class="grande fa fa-toggle-on"></span></a></h5>
 
-      <% if @university.is_cafe == true %>
-      <h5><span class="fa fa-coffee"></span>Cafeteria</h5>
-      <% else %>
-      <h5><span class="fa fa-coffee"></span><strike>Cafeteria</strike></h5>
-      <% end %>
+      <h5><span class="fa fa-coffee"></span><%= best_in_place [@university], :is_cafe, as: :checkbox, collection: {true: "Cafeteria", false: "#{'<span class= "strike">Cafeteria</span>'}".html_safe}, :activator => "#13" %><a href="#" id="13"> <span class="grande fa fa-toggle-on"></span></a></h5> 
+      
+      <h5><span class="fa fa-book"></span><%= best_in_place [@university], :is_libray, as: :checkbox, collection: {true: "Library", false: "#{'<span class= "strike">Library</span>'}".html_safe}, :activator => "#14" %><a href="#" id="14"> <span class="grande fa fa-toggle-on"></span></a></h5> 
 
-      <% if @university.is_libray == true %>
-      <h5><span class="fa fa-book"></span>Library</h5>
-      <% else %>
-      <h5><span class="fa fa-book"></span><strike>Library</strike></h5>
-      <% end %>
 
-      <% if @university.is_job_help == true %>
-      <h5><span class="fa fa-search"></span>Job Board</h5>
-      <% else %>
-      <h5><span class="fa fa-search"></span><strike>Job Board</strike></h5>
-      <% end %>
+      <h5><span class="fa fa-search"></span><%= best_in_place [@university], :is_job_help, as: :checkbox, collection: {true: "Job Board", false: "#{'<span class= "strike">Job Board</span>'}".html_safe}, :activator => "#15" %><a href="#" id="15"> <span class="grande fa fa-toggle-on"></span></a></h5> 
 
-      <% if @university.is_student_exchange == true %>
-      <h5><span class="fa fa-plane"></span>Study Abroad</h5>
-      <% else %>
-      <h5><span class="fa fa-plane"></span><strike>Study Abroad</strike></h5>
-      <% end %>
 
-      <% if @university.is_safe == true %>
-      <h5><span class="fa fa-hand-peace-o"></span>Safe Campus</h5>
-      <% else %>
-      <h5><span class="fa fa-hand-peace-o"></span><strike>Safe Campus</strike></h5>
-      <% end %>
+      <h5><span class="fa fa-plane"></span><%= best_in_place [@university], :is_student_exchange, as: :checkbox, collection: {true: "Study Abroad", false: "#{'<span class= "strike">Study Abroad</span>'}".html_safe}, :activator => "#16" %><a href="#" id="16"> <span class="grande fa fa-toggle-on"></span></a></h5> 
 
-      <% if @university.is_spiritual == true %>
-      <h5><span class="fa fa-bell"></span>Spiritual University</h5>
-      <% else %>
-      <h5><span class="fa fa-bell"></span><strike>Spiritual University</strike></h5>
-      <% end %>
 
-      <% if @university.gym == true %>
-      <h5><span class="fa fa-bell"></span>Gym</h5>
-      <% else %>
-      <h5><span class="fa fa-bell"></span><strike>Gym</strike></h5>
-      <% end %>
 
-      <% if @university.pool == true %>
-      <h5><span class="fa fa-bell"></span>Swimming Pool</h5>
-      <% else %>
-      <h5><span class="fa fa-bell"></span><strike>Swmimming Pool</strike></h5>
-      <% end %>
+      <h5><span class="fa fa-hand-peace-o"></span><%= best_in_place [@university], :is_safe, as: :checkbox, collection: {true: "Safe Campus", false: "#{'<span class= "strike">Safe Campus</span>'}".html_safe}, :activator => "#17" %><a href="#" id="17"> <span class="grande fa fa-toggle-on"></span></a></h5> 
 
-      <% if @university.residence == true %>
-      <h5><span class="fa fa-bell"></span>Student's residence</h5>
-      <% else %>
-      <h5><span class="fa fa-bell"></span><strike>Student's residence</strike></h5>
-      <% end %>
 
-      <% if @university.location == true %>
-      <h5><span class="fa fa-bell"></span>Good Location</h5>
-      <% else %>
-      <h5><span class="fa fa-bell"></span><strike>Good Location</strike></h5>
-      <% end %>
 
-      <% if @university.luch == true %>
-      <h5><span class="fa fa-bell"></span>Places for lunch</h5>
-      <% else %>
-      <h5><span class="fa fa-bell"></span><strike>Places for lunch</strike></h5>
-      <% end %>
+      <h5><span class="fa fa-bell"></span><%= best_in_place [@university], :is_spiritual, as: :checkbox, collection: {true: "Spiritual University", false: "#{'<span class= "strike">Spiritual University</span>'}".html_safe}, :activator => "#18" %><a href="#" id="18"> <span class="grande fa fa-toggle-on"></span></a></h5> 
+
+
+
+      <h5><span class="fa fa-anchor"></span><%= best_in_place [@university], :gym, as: :checkbox, collection: {true: "Gym", false: "#{'<span class= "strike">Gym</span>'}".html_safe}, :activator => "#19" %><a href="#" id="19"> <span class="grande fa fa-toggle-on"></span></a></h5> 
+
+
+      <h5><span class="fa fa-life-ring"></span><%= best_in_place [@university], :pool, as: :checkbox, collection: {true: "Swimming Pool", false: "#{'<span class= "strike">Swimming Pool</span>'}".html_safe}, :activator => "#20" %><a href="#" id="20"> <span class="grande fa fa-toggle-on"></span></a></h5> 
+
+
+      <h5><span class="fa fa-bed"></span><%= best_in_place [@university], :residence, as: :checkbox, collection: {true: "Students residence", false: "#{'<span class= "strike">Students residence</span>'}".html_safe}, :activator => "#21" %><a href="#" id="21"> <span class="grande fa fa-toggle-on"></span></a></h5> 
+
+
+
+      <h5><span class="fa fa-map-marker"></span><%= best_in_place [@university], :location, as: :checkbox, collection: {true: "Good Location", false: "#{'<span class= "strike">Good Location</span>'}".html_safe}, :activator => "#22" %><a href="#" id="22"> <span class="grande fa fa-toggle-on"></span></a></h5> 
+
+
+      <h5><span class="fa fa-coffee"></span><%= best_in_place [@university], :luch, as: :checkbox, collection: {true: "Places for lunch", false: "#{'<span class= "strike">Places for lunch</span>'}".html_safe}, :activator => "#23" %><a href="#" id="23"> <span class="grande fa fa-toggle-on"></span></a></h5> 
+
     </div>
+
 <!--  -->
     <div id="magic">
       <h4 class="titulo">Sports</h4>
@@ -472,16 +445,15 @@ return false">
   <%= @university.private_or_public %>
 </p>
 
-<p>
-  <strong>Name:</strong>
-  
-  <%= best_in_place [@university], :name, :place_holder => "Click me to add content!" %>
-</p>
-
-
-
 
 <!--  -->
+
+<script>
+  $(document).ready(function() {
+  /* Activating Best In Place */
+  jQuery(".best_in_place").best_in_place();
+});
+</script>
 
 
 <script>
