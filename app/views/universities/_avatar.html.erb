@@ -1,0 +1,44 @@
+<div id="circle">
+  <% @uploads.each_with_index do |upload, i| %>
+	
+	<% if i == @uploads.count - 1 %>
+	<div class="avatar">
+  <%= image_tag(upload.image_url:large) if upload.image? %>
+  </div>
+  <% end %>
+
+  <% end %>
+  <!-- Trigger the modal with a button -->
+<button type="button" class="pencil" data-toggle="modal" data-target="#AvatarModal"><span class="fa fa-pencil"></span></button>
+
+<!--  -->
+</div>
+
+
+<!--  -->
+<!-- Modal -->
+<div class="modal fade" id="AvatarModal" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">University Logo</h4>
+      </div>
+      <div class="modal-body">
+
+<%= form_for [@university, @upload], :html => {:id => 'upload_form'} do |f| %>
+  <div class="field">
+    <%= f.label :image %><br>
+    <%= f.file_field :image %>
+  </div>
+  <div class="actions">
+    <%= f.submit class: "botones button_red" %>
+  </div>
+<% end %>
+
+</div>
+    </div>
+  </div>
+</div>
+
+

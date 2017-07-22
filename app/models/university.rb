@@ -13,6 +13,7 @@ has_many :professor_scores
 has_many :investment_scores
 has_many :finantial_scores
 has_many :careers
+has_many :uploads
 
 
 has_many :reviews

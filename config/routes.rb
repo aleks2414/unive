@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
 
   
+
   get 'alumni/alumni'
 
   resources :countries
   
   resources :universities do
+    resources :uploads
     resources :unive_scores
     resources :academic_scores
     resources :party_scores

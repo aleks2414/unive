@@ -404,3 +404,23 @@ background-attachment: unset;
 .upper {
   text-transform: uppercase;
 }
+
+.pencil {
+  margin: 5px;
+  background-color: white;
+  border: solid 2px $red;
+  border-radius: 50%;
+  &:hover  {
+    color:white;
+    background-color: $red;
+  }
+  span {
+    color: $red;
+  }
+}
+
+#circle {
+  .avatar {
+  text-align: center;
+}
+}

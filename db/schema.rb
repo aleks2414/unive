@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170720182600) do
+ActiveRecord::Schema.define(version: 20170721224318) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -174,6 +174,17 @@ ActiveRecord::Schema.define(version: 20170720182600) do
   add_index "graduation_scores", ["university_id"], name: "index_graduation_scores_on_university_id", using: :btree
   add_index "graduation_scores", ["user_id"], name: "index_graduation_scores_on_user_id", using: :btree
 
+  create_table "images", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "university_id"
+    t.string   "photo"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "images", ["university_id"], name: "index_images_on_university_id", using: :btree
+  add_index "images", ["user_id"], name: "index_images_on_user_id", using: :btree
+
   create_table "infraestructure_scores", force: :cascade do |t|
     t.float    "infraestructure_score", default: 3.0
     t.integer  "university_id"
@@ -309,6 +320,17 @@ ActiveRecord::Schema.define(version: 20170720182600) do
   add_index "universities", ["slug"], name: "index_universities_on_slug", unique: true, using: :btree
   add_index "universities", ["user_id"], name: "index_universities_on_user_id", using: :btree
 
+  create_table "uploads", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "university_id"
+    t.string   "image"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "uploads", ["university_id"], name: "index_uploads_on_university_id", using: :btree
+  add_index "uploads", ["user_id"], name: "index_uploads_on_user_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -350,6 +372,8 @@ ActiveRecord::Schema.define(version: 20170720182600) do
   add_foreign_key "finantial_scores", "users"
   add_foreign_key "graduation_scores", "universities"
   add_foreign_key "graduation_scores", "users"
+  add_foreign_key "images", "universities"
+  add_foreign_key "images", "users"
   add_foreign_key "infraestructure_scores", "universities"
   add_foreign_key "infraestructure_scores", "users"
   add_foreign_key "investment_scores", "universities"
@@ -370,4 +394,6 @@ ActiveRecord::Schema.define(version: 20170720182600) do
   add_foreign_key "unive_scores", "users"
   add_foreign_key "universities", "countries"
   add_foreign_key "universities", "users"
+  add_foreign_key "uploads", "universities"
+  add_foreign_key "uploads", "users"
 end

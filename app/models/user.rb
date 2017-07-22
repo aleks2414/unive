@@ -22,4 +22,5 @@ has_many :ex_students
 has_many :accreditations
 has_many :rankings
 has_many :current_jobs
+has_many :uploads
 end

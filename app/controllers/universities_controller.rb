@@ -35,6 +35,7 @@ class UniversitiesController < ApplicationController
   # GET /universities/1
   # GET /universities/1.json
   def show
+    @upload = @university.uploads.new
     @unive_score = @university.unive_scores.new
     @academic_score = @university.academic_scores.new
     @party_score = @university.party_scores.new
@@ -48,6 +49,7 @@ class UniversitiesController < ApplicationController
     @finantial_score = @university.finantial_scores.new
 
     @careers = @university.careers
+    @uploads = @university.uploads
   end
 
   # GET /universities/new
