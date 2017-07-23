@@ -447,19 +447,23 @@ background-attachment: unset;
 
 .vote {
   margin: 5px;
-  background-color: $blue;
+  background-color: $red;
   border: solid 2px white;
   &:hover   {
     color:$blue;
     background-color: white;
-    border: solid 2px $blue;
+    border: solid 2px $red;
     span {
-      color: $blue;
+      color: $red;
     }
   }
   span {
     color: white;
   }
+}
+
+.grande {
+  color: $blue;
 }
 
 #circle {
