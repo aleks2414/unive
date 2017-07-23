@@ -64,9 +64,12 @@ class UniversitiesController < ApplicationController
  end
 
     @q = University.ransack(params[:q])
-    @universities = @q.result.includes(:country, :careers).to_a.uniq
+    @universities = @q.result.includes(:country, :careers).uniq
+
+    @universities = @universities.order('name ASC').paginate(:page => params[:page], :per_page => 1)
 
     @arrUnis = @universities.to_a
+
 
       respond_to do |format|
       format.html # index.html.erb

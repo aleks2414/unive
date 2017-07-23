@@ -72,7 +72,9 @@
           <div id="cudrado">
             <h3><%= career.name.truncate(40) %></h3>
             <h4 class="titulo"><%=career.option %></h4>
+            <% if career.description.present? %>
             <p><%= career.description.truncate(70)%></p>
+            <% end %>
             <h5 class="izq"><span class="fa fa-clock-o"></span> <%= career.duration %></h5>
             <h5 class="der"><span class="fa fa-compass"></span> <%= career.area.truncate(17) %></h5>
           </div>

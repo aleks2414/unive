@@ -9,9 +9,11 @@
         <%= image_tag ("logo.png")%>
       </div>
       <div class="content">
-        <h3><%= university.name.truncate(50) %></h3>
+        <h3><%= university.try(:name).truncate(50) %></h3>
         <h4 class="titulo"><%= university.country.name%></h4>
-        <p><%= university.description.truncate(100)%></p>
+        <% if university.description.present? %>
+        <p><%= university.try(:description).truncate(100)%></p>
+        <% end %>
         <h5 class="izq"><span class="fa fa-clone"> </span> <%= university.careers.count%> careers</h5>
         <h5 class="der"><span class="fa fa-star"> </span> <%= university.average_score%></h5>
       </div>
@@ -20,4 +22,14 @@
   </div>
   <% end %>
 </div>
+
+
+<div class="row">
+<div class="center">
+<% unless @universities.blank? %>
+  <%= will_paginate @universities %>
+<% end %>
+</div>
+</div>
+
 

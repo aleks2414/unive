@@ -5,7 +5,7 @@ class CareersController < ApplicationController
   # GET /careers
   # GET /careers.json
   def index
-    @careers = Career.all
+    @careers = @university.careers
 
     @unive_score = @university.unive_scores.new
     @academic_score = @university.academic_scores.new
