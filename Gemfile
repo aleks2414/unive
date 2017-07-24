@@ -28,11 +28,9 @@ gem 'friendly_id', '~> 5.1.0' # Note: You MUST use 5.0.0 or greater for Rails 4.
 gem 'mail_form'
 gem 'devise'
 gem 'toastr-rails'
-gem 'paperclip'
 gem 'geocoder'
 gem 'jquery-ui-rails'
 gem 'ransack'
-gem 'aws-sdk', '~> 2.3'
 gem "figaro"
 gem 'meta-tags'
 gem 'searchkick'
