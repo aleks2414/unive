@@ -37,7 +37,7 @@ gem 'searchkick'
 gem 'best_in_place', github: 'bernat/best_in_place'
 gem 'carrierwave', '~> 1.0'
 gem "mini_magick"
-gem "fog-aws"
+gem "fog"
 gem 'will_paginate', '~> 3.1.0'
 
 # Use ActiveModel has_secure_password
