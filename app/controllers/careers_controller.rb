@@ -6,6 +6,7 @@ class CareersController < ApplicationController
   # GET /careers.json
   def index
     @careers = @university.careers
+    @careers = @careers.order('name ASC').paginate(:page => params[:page], :per_page => 30)
 
     @unive_score = @university.unive_scores.new
     @academic_score = @university.academic_scores.new

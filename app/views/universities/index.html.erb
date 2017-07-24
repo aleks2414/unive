@@ -1,6 +1,6 @@
 <div id="cuadro">
 
-<%= search_form_for @q, id: 'my_search' do |f| %>
+<%= search_form_for @q, remote:true, id: 'my_search' do |f| %>
   <div class="row">
   
   <div class="col-md-12">
@@ -319,7 +319,7 @@
 <hr>
 
 
-  <%= f.submit "search" %>
+  <%= f.submit "SEARCH", class: "button button_blue" %>
 <% end %>
 </div>
 
