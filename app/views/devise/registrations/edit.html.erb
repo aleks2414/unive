@@ -12,6 +12,22 @@
     <%= f.email_field :email, autofocus: true %>
   </div>
 
+  <div class="field">
+ <%= f.label :Name %><br />
+ <%= f.text_field :name, autofocus: true, required: true %>
+ </div>
+
+<div class="field">
+ <%= f.label :country %><br />
+ <%= f.text_field :country, autofocus: true, required: true %>
+ </div>
+
+<div class="field">
+ <%= f.label :Photo %><br />
+ <%= f.file_field :photo, autofocus: true, required: true %>
+ </div> 
+ <br><br>
+
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>

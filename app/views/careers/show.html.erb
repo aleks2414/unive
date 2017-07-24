@@ -1,8 +1,10 @@
 <br>
-<h4 class="titulo center"><%= best_in_place [@university, @career], :option, :as => :select, :collection => {"1" => "Graduate", "2" => "Undergraduate", "3" => "Specialist", "4" => "Doctoral", "5" => "Master"}, :activator => "#80", :place_holder => "Edit graduate option " %><a href="#" id="80"> <span class="grande fa fa-pencil-square"></span></a></h4>
+<h4 class="titulo center"><%= best_in_place [@university, @career], :option, :as => :select, :collection => {"1" => "Graduate", "2" => "Undergraduate", "3" => "Specialist", "4" => "Doctoral", "5" => "Master"}, :activator => "#80", :place_holder => "Edit graduate option " %><% if user_signed_in? %><a href="#" id="80"> <span class="grande fa fa-pencil-square"></span></a><%else%>
+        <a href="<%= new_user_session_path %>"> <span class="grande fa fa-pencil-square"></span></a><%end%></h4>
 <h1 class="center upper">
   <%= best_in_place [@university, @career], :name, :place_holder => "Click me to add content!", :activator => "#1" %>
-  <a href="#" id="1"> <span class="grande fa fa-pencil-square"></span></a>
+  <% if user_signed_in? %><a href="#" id="1"> <span class="grande fa fa-pencil-square"></span></a><%else%>
+        <a href="<%= new_user_session_path %>"> <span class="grande fa fa-pencil-square"></span></a><%end%>
 </h1>
 
 <h3 class="center"><%= @career.university.name %></h3>
@@ -71,34 +73,41 @@
 
 
 
-  <h4 class="titulo">Division <a href="#" id="50"> <span class="grande fa fa-pencil-square"></span></a></h4>
+  <h4 class="titulo">Division <% if user_signed_in? %><a href="#" id="50"> <span class="grande fa fa-pencil-square"></span></a><%else%>
+            <a href="<%= new_user_session_path %>"> <span class="grande fa fa-pencil-square"></span></a><%end%></h4>
     <p><%= best_in_place [@university, @career], :area, :as => :select, :collection => {"1" => "Agricultural", "2" => "Art and Architecture", "3" => "Exact and Natural Sciences", "4" => "Social Sciences", "5" => "Law", "6" => "Human Studies", "7" => "Education", "8" => "Technology", "9" => "Health Studies", "10" => "Administration and Trade Studies", "11" => "Religious Studies"}, :activator => "#50" %></p>
 
     
-    <h4 class="titulo">Description <a href="#" id="5"> <span class="grande fa fa-pencil-square"></span></a></h4>
+    <h4 class="titulo">Description <% if user_signed_in? %><a href="#" id="5"> <span class="grande fa fa-pencil-square"></span></a><%else%>
+            <a href="<%= new_user_session_path %>"> <span class="grande fa fa-pencil-square"></span></a><%end%></h4>
     <p><%= best_in_place [@university, @career], :description, :as => :textarea, :place_holder => "Click me to add content!", :activator => "#5" %></p>
 
-    <h4 class="titulo">Who may study this? <a href="#" id="6"> <span class="grande fa fa-pencil-square"></span></a></h4>
+    <h4 class="titulo">Who may study this? <% if user_signed_in? %><a href="#" id="6"> <span class="grande fa fa-pencil-square"></span></a><%else%>
+            <a href="<%= new_user_session_path %>"> <span class="grande fa fa-pencil-square"></span></a><%end%></h4>
     <p><%= best_in_place [@university, @career], :for_who, :as => :textarea, :place_holder => "Click me to add content!", :activator => "#6" %></p>
 
 <div class="row">
   <div class="col-md-6">
-    <h4 class="titulo">Duration <a href="#" id="7"> <span class="grande fa fa-pencil-square"></span></a></h4>
+    <h4 class="titulo">Duration <% if user_signed_in? %><a href="#" id="7"> <span class="grande fa fa-pencil-square"></span></a><%else%>
+            <a href="<%= new_user_session_path %>"> <span class="grande fa fa-pencil-square"></span></a><%end%></h4>
     <p><%= best_in_place [@university, @career], :duration, :place_holder => "Click me to add content!", :activator => "#7" %></p>
   </div>
   <div class="col-md-6">
-    <h4 class="titulo">Modality <a href="#" id="8"> <span class="grande fa fa-pencil-square"></span></a></h4>
+    <h4 class="titulo">Modality <% if user_signed_in? %><a href="#" id="8"> <span class="grande fa fa-pencil-square"></span></a><%else%>
+            <a href="<%= new_user_session_path %>"> <span class="grande fa fa-pencil-square"></span></a><%end%></h4>
     <p><%= best_in_place [@university, @career], :modality, :as => :select, :collection => {"1" => "Face to face", "2" => "On line"}, :activator => "#8" %></p>
   </div>
 </div>
 
 <div class="row">
   <div class="col-md-6">
-    <h4 class="titulo">Shift <a href="#" id="9"> <span class="grande fa fa-pencil-square"></span></a></h4>
+    <h4 class="titulo">Shift <% if user_signed_in? %><a href="#" id="9"> <span class="grande fa fa-pencil-square"></span></a><%else%>
+            <a href="<%= new_user_session_path %>"> <span class="grande fa fa-pencil-square"></span></a><%end%></h4>
     <p><%= best_in_place [@university, @career], :shift, :as => :select, :collection => {"1" => "Morning Shift", "2" => "Afternoon Shift"}, :activator => "#9" %></p>
   </div>
   <div class="col-md-6">
-    <h4 class="titulo">Aprox Cost <a href="#" id="10"> <span class="grande fa fa-pencil-square"></span></a></h4>
+    <h4 class="titulo">Aprox Cost <% if user_signed_in? %><a href="#" id="10"> <span class="grande fa fa-pencil-square"></span></a><%else%>
+            <a href="<%= new_user_session_path %>"> <span class="grande fa fa-pencil-square"></span></a><%end%></h4>
     <p><%= best_in_place [@university, @career], :aprox_cost, :place_holder => "Click me to add content!", :activator => "#10" %></p>
   </div>
 </div>
@@ -107,17 +116,23 @@
   </div>
   <div class="col-md-4">
     <h4 class="titulo">Contact</h4>
-    <h5><span class="fa fa-globe"> </span><%= best_in_place [@university, @career], :website, :place_holder => "Add website", :activator => "#6" %> <a href="#" id="6"> <span class="grande fa fa-pencil-square"></span></a></h5>
+    <h5><span class="fa fa-globe"> </span><%= best_in_place [@university, @career], :website, :place_holder => "Add website", :activator => "#60" %> <% if user_signed_in? %><a href="#" id="60"> <span class="grande fa fa-pencil-square"></span></a><%else%>
+        <a href="<%= new_user_session_path %>"> <span class="grande fa fa-pencil-square"></span></a><%end%></h5>
 
-      <h5><span class="fa fa-envelope"> </span><%= best_in_place [@university, @career], :email, :place_holder => "Add an email", :activator => "#7" %> <a href="#" id="7"> <span class="grande fa fa-pencil-square"></span></a></h5>
+      <h5><span class="fa fa-envelope"> </span><%= best_in_place [@university, @career], :email, :place_holder => "Add an email", :activator => "#70" %> <% if user_signed_in? %><a href="#" id="70"> <span class="grande fa fa-pencil-square"></span></a><%else%>
+        <a href="<%= new_user_session_path %>"> <span class="grande fa fa-pencil-square"></span></a><%end%></h5>
 
-      <h5><span class="fa fa-facebook"> </span><%= best_in_place [@university, @career], :facebook, :place_holder => "Add facebook page", :activator => "#8" %> <a href="#" id="8"> <span class="grande fa fa-pencil-square"></span></a></h5>
+      <h5><span class="fa fa-facebook"> </span><%= best_in_place [@university, @career], :facebook, :place_holder => "Add facebook page", :activator => "#800" %> <% if user_signed_in? %><a href="#" id="800"> <span class="grande fa fa-pencil-square"></span></a><%else%>
+        <a href="<%= new_user_session_path %>"> <span class="grande fa fa-pencil-square"></span></a><%end%></h5>
 
-      <h5><span class="fa fa-twitter"> </span><%= best_in_place [@university, @career], :twitter, :place_holder => "Add twitter site", :activator => "#9" %> <a href="#" id="9"> <span class="grande fa fa-pencil-square"></span></a></h5>
+      <h5><span class="fa fa-twitter"> </span><%= best_in_place [@university, @career], :twitter, :place_holder => "Add twitter site", :activator => "#90" %> <% if user_signed_in? %><a href="#" id="90"> <span class="grande fa fa-pencil-square"></span></a><%else%>
+        <a href="<%= new_user_session_path %>"> <span class="grande fa fa-pencil-square"></span></a><%end%></h5>
 
-      <h5><span class="fa fa-linkedin"> </span><%= best_in_place [@university, @career], :linkedin, :place_holder => "Add linked in website", :activator => "#10" %> <a href="#" id="10"> <span class="grande fa fa-pencil-square"></span></a></h5>
+      <h5><span class="fa fa-linkedin"> </span><%= best_in_place [@university, @career], :linkedin, :place_holder => "Add linked in website", :activator => "#100" %> <% if user_signed_in? %><a href="#" id="100"> <span class="grande fa fa-pencil-square"></span></a><%else%>
+        <a href="<%= new_user_session_path %>"> <span class="grande fa fa-pencil-square"></span></a><%end%></h5>
 
-      <h5><span class="fa fa-globe"> </span><%= best_in_place [@university, @career], :blog, :place_holder => "Add blog", :activator => "#11" %> <a href="#" id="11"> <span class="grande fa fa-pencil-square"></span></a></h5>
+      <h5><span class="fa fa-globe"> </span><%= best_in_place [@university, @career], :blog, :place_holder => "Add blog", :activator => "#110" %> <% if user_signed_in? %><a href="#" id="110"> <span class="grande fa fa-pencil-square"></span></a><%else%>
+        <a href="<%= new_user_session_path %>"> <span class="grande fa fa-pencil-square"></span></a><%end%></h5>
 
   </div>
 </div>

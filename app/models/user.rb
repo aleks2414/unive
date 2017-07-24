@@ -24,4 +24,7 @@ has_many :rankings
 has_many :current_jobs
 has_many :uploads
 has_many :photos
+
+mount_uploader :photo, PhotoUploader # Tells rails to use this uploader for this model.
+
 end
